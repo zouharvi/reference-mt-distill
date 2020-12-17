@@ -1,0 +1,6 @@
+# raw models
+*.npz
+*.spm
+*.s2t.gz
+# corpora
+*.tsv.gz
