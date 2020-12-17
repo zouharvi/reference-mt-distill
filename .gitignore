@@ -4,3 +4,7 @@
 *.s2t.gz
 # corpora
 *.tsv.gz
+europarl*.tsv
+europarl*.cs
+europarl*.en
+europarl*.de
