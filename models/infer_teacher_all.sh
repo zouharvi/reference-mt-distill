@@ -13,7 +13,7 @@ marian-decoder \
     --n-best \
     --no-spm-decode \
     --normalize 1 \
-    2> /dev/null \
+    --quiet-translation \
 
 marian-decoder \
     -m "models/teacher/encs/model.bin" \
@@ -24,7 +24,7 @@ marian-decoder \
     --n-best \
     --no-spm-decode \
     --normalize 1 \
-    2> /dev/null \
+    --quiet-translation \
 
 marian-decoder \
     -m "models/teacher/csen/model.bin" \
@@ -35,4 +35,4 @@ marian-decoder \
     --n-best \
     --no-spm-decode \
     --normalize 1 \
-    2> /dev/null \
+    --quiet-translation \
