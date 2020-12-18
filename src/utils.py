@@ -15,3 +15,4 @@ def loader(ftrans, fref, prefix='data/'):
                 prev_i = cur_i
                 cur_ref = next(fref)
             yield (sent_raw, cur_ref, f0a, f0b)
+    

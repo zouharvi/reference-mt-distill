@@ -9,10 +9,10 @@ models/teacher/csen/*.yml
 
 # corpora
 *.tsv.gz
-europarl*.tsv
-europarl*.cs
-europarl*.en
-europarl*.de
+data/**/*.tsv
+data/**/*.cs
+data/**/*.en
+data/**/*.de
 
 # misc.
 .vscode
