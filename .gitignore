@@ -1,10 +1,17 @@
 # raw models
-*.npz
-*.spm
-*.s2t.gz
+models/**/*.npz
+models/**/*.bin
+models/**/*.spm
+models/**/*.s2t.gz
+models/**/*.tar
+models/teacher/encs/*.yml
+models/teacher/csen/*.yml
 # corpora
 *.tsv.gz
 europarl*.tsv
 europarl*.cs
 europarl*.en
 europarl*.de
+
+# misc.
+.vscode

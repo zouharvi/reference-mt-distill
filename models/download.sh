@@ -9,13 +9,13 @@ wget -nc -P teacher/ende/ http://data.statmt.org/romang/bergamot/models/deen/voc
 mv teacher/ende/vocab.deen.spm teacher/ende/vocab.spm
 
 # csen
-wget -nc -P teacher/csen/ http://data.statmt.org/bergamot/models/8bit-students/csen/base/model.npz.best-bleu-detok.npz
-wget -nc -P teacher/csen/ http://data.statmt.org/bergamot/models/8bit-students/csen/base/lex.s2t.gz
-wget -nc -P teacher/csen/ http://data.statmt.org/bergamot/models/8bit-students/csen/base/vocab.spm
-mv teacher/csen/model.npz.best-bleu-detok.npz teacher/csen/model.npz
+wget -nc -P teacher/csen/ http://data.statmt.org/bergamot/models/csen/csen.student.base.tar
+tar -xf teacher/csen/csen.student.base.tar
+mv csen.student.base/* teacher/csen
+rm -rf csen.student.base
 
 # encs
-wget -nc -P teacher/encs/ http://data.statmt.org/bergamot/models/8bit-students/encs/base/model.npz.best-bleu-detok.npz
-wget -nc -P teacher/encs/ http://data.statmt.org/bergamot/models/8bit-students/encs/base/lex.s2t.gz
-wget -nc -P teacher/encs/ http://data.statmt.org/bergamot/models/8bit-students/encs/base/vocab.spm
-mv teacher/encs/model.npz.best-bleu-detok.npz teacher/encs/model.npz
+wget -nc -P teacher/encs/ http://data.statmt.org/bergamot/models/csen/encs.student.base.tar
+tar -xf teacher/encs/encs.student.base.tar
+mv encs.student.base/* teacher/encs
+rm -rf encs.student.base
