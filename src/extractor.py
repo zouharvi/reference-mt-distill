@@ -12,26 +12,36 @@ class CandidateSent():
         self.score = score
 
 def extractor_wrap(func):
+    """
+    Partially instantiate extractors, so that they can be used in recipe definitions
+    without the need of having the input generator
+    """
     def f(**args):
         return partial(func, **args)
     return f
 
 @extractor_wrap
-def top_k(input_loader, scorer, k):
+def top_k(nbest, scorer, k):
     """
     Take top k scoring candidates according to the scorer
     """
-    for nbest in input_loader:
-        for x in sorted(nbest, key=scorer)[:k]:
-            yield x
+    yield sorted(nbest, key=scorer)[k]
 
 @extractor_wrap
-def atleast_k(input_loader, scorer, k):
+def atleast_k(nbest, scorer, k):
     """
     Take any number of scoring candidates with score at least k 
     """
-    for nbest in input_loader:
-        for x in [x for x in nbest if scorer(x) >= k]:
-            print(x.new_ref)
-            print(x.cur_ref)
-            yield x
+    for x in [x for x in nbest if scorer(x) >= k]:
+        yield x
+
+@extractor_wrap
+def aggregator(candidate_list, recipe):
+    """
+    Aggregates extractor list recipes [(repetition, extractor)] and yields the results
+    """
+    for nbest in candidate_list:
+        for repetition, extractor in recipe:
+            for _ in range(repetition):
+                for candidate in extractor(nbest):
+                    yield candidate

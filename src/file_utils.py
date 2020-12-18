@@ -30,12 +30,14 @@ def loader(fsrc, fref, ftrans, prefix='data/'):
                 float(score)
             ))
 
+        if len(buffer) != 0:
+            yield buffer
+
 
 def saver(fnew_src, fnew_tgt, candidate_list, spm_model, prefix='data/'):
     """
     Save candidate lists to files, decode spm
     """
-
     sp = spm.SentencePieceProcessor(model_file=spm_model)
     with open(prefix + fnew_src, 'w') as fnew_src, open(prefix + fnew_tgt, 'w') as fnew_tgt:
         for candidate in candidate_list:
@@ -43,12 +45,12 @@ def saver(fnew_src, fnew_tgt, candidate_list, spm_model, prefix='data/'):
             fnew_tgt.write(sp.decode(candidate.new_ref) + '\n')
 
 
-def load_process_save(fsrc, ftgt, ftrans, generator_lambda, fnew_src, fnew_tgt, spm_model):
+def load_process_save(fsrc, ftgt, ftrans, generator_partial, fnew_src, fnew_tgt, spm_model):
     """
     Load data (fsrc, ftgt, ftrans), apply generator (generator_lambda), save (fnew_src, fnew_tgt, spm_model)
     """
     input_loader = loader(fsrc, ftgt, ftrans)
-    data_generator = generator_lambda(input_loader)
+    data_generator = generator_partial(input_loader)
     saver(
         fnew_src, fnew_tgt,
         data_generator,
