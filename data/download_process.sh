@@ -13,6 +13,7 @@ EVAL_COUNT=15000
 EVAL_COUNT_DOUBLE=$(( 2 * $EVAL_COUNT))
 
 # remove faulty long lines
+# word count: 633, 668, 668
 sed -i "1395584d;1681528d;1796262d;" europarl-v10.de-en.tsv
 
 # randomly shuffle data
