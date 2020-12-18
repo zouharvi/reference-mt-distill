@@ -6,6 +6,7 @@ models/**/*.s2t.gz
 models/**/*.tar
 models/teacher/encs/*.yml
 models/teacher/csen/*.yml
+
 # corpora
 *.tsv.gz
 europarl*.tsv
@@ -15,3 +16,4 @@ europarl*.de
 
 # misc.
 .vscode
+__pycache__
