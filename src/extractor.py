@@ -1,15 +1,29 @@
 from functools import partial
-
+import sacrebleu
 
 class CandidateSent():
     """
     Small data structure for candidate filtering
     """
-    def __init__(self, cur_src, cur_ref, new_ref, score):
+    def __init__(self, cur_src, cur_ref, new_hyp, score, spm_obj):
         self.cur_src = cur_src
         self.cur_ref = cur_ref
-        self.new_ref = new_ref
+        self.new_hyp = new_hyp
         self.score = score
+        self.spm_obj = spm_obj
+
+    def bleu(self):
+        """
+        Bleu of the hypothesis
+        """
+        return sacrebleu.sentence_bleu(self.new_hyp.replace(' ', '').replace('</s>', '').replace('▁', ' '), [self.cur_ref]).score
+
+    def spm_diff(self):
+        """
+        Difference in subword unit counts
+        """
+        return abs(self.new_hyp.count('▁') - len(self.spm_obj.encode(self.cur_ref)))
+
 
 def extractor_wrap(func):
     """
@@ -34,6 +48,19 @@ def atleast_k(nbest, scorer, k):
     """
     for x in [x for x in nbest if scorer(x) >= k]:
         yield x
+
+@extractor_wrap
+def original(nbest):
+    """
+    Take any number of scoring candidates with score at least k 
+    """
+    yield CandidateSent(
+        nbest[0].cur_src,
+        nbest[0].cur_ref,
+        nbest[0].cur_ref,
+        nbest[0].score,
+        nbest[0].spm_obj,
+    )
 
 @extractor_wrap
 def aggregator(candidate_list, recipe):
