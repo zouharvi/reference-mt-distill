@@ -22,7 +22,7 @@ class CandidateSent():
         """
         Difference in subword unit counts
         """
-        return abs(self.new_hyp.count('▁') - len(self.spm_obj.encode(self.cur_ref)))
+        return -abs(self.new_hyp.count('▁') - len(self.spm_obj.encode(self.cur_ref)))
 
 
 def extractor_wrap(func):
@@ -37,7 +37,7 @@ def extractor_wrap(func):
 @extractor_wrap
 def top_k(nbest, scorer, k):
     """
-    Take top k scoring candidates according to the scorer
+    Take top k-th scoring candidate according to the scorer
     """
     yield sorted(nbest, key=scorer)[k]
 

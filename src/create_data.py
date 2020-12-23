@@ -17,16 +17,34 @@ META_LANGS = [
     ('de-en', 'ende'),
 ]
 
+# forig:     folder with train.LPAIRORIG.LSRC and train.LPAIRORIG.LTGT
+# ftrans:    translated target language by the teacher
+# fnew:      folder where train.LPAIRORIG.LSRC and train.LPAIRORIG.LTGT will be placed
+# spm_model: path to sentence piece model
+# generator_partial: new data generator
+# every recipe is a tuple of number of repetitions and a generator
+# examples:
+# (1, original()),
+# (5, top_k(scorer=lambda x: x.score, k=1)),
+# (1, atleast_k(scorer=lambda x: x.score, k=-0.1)),
+
 META_RECIPES = [
     {
         'forig': 'original',
         'ftrans': 'teacher/train.LPAIRORIG.LTGT',
-        'fnew': 'experiment/LPAIRTRUE',
+        'fnew': 'experiment/top1score/LPAIRTRUE',
         'spm_model': 'models/teacher/LPAIRTRUE/vocab.spm',
         'generator_partial': aggregator(recipe=[
-            (1, original()),
-            # (1, top_k(scorer=lambda x: x.score, k=1)),
-            # (1, atleast_k(scorer=lambda x: x.score, k=-0.1)),
+            (1, top_k(scorer=lambda x: x.score, k=1)),
+        ]),
+    },
+    {
+        'forig': 'original',
+        'ftrans': 'teacher/train.LPAIRORIG.LTGT',
+        'fnew': 'experiment/top3score/LPAIRTRUE',
+        'spm_model': 'models/teacher/LPAIRTRUE/vocab.spm',
+        'generator_partial': aggregator(recipe=[
+            (1, top_k(scorer=lambda x: x.score, k=3)),
         ]),
     },
 ]
@@ -40,7 +58,8 @@ for lpairorig, lpairtrue in META_LANGS:
         # replace capital variables in the recipe
         meta_recipe = {
             k: (
-                v.replace('LPAIRTRUE', lpairtrue).replace('LPAIRORIG', lpairorig).replace('LSRC',  lsrc).replace('LTGT', ltgt)
+                v.replace('LPAIRTRUE', lpairtrue).replace('LPAIRORIG', lpairorig).
+                replace('LSRC',  lsrc).replace('LTGT', ltgt)
                 if isinstance(v, str) else v
             )
             for k, v in meta_recipe.items()
