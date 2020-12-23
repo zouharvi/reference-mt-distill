@@ -5,7 +5,7 @@ Repository for the project _Almost Black-Box MT Model Stealing with Reference Tr
 
 ## Introduction 
 
-Consider the following scenario. You want to train a machine learning model to translate between languages but you don't have enough bilingual data to train it accurate. We suggest a simple solution. The idea is quite simple. We use an already trained teacher model and query it on a big monolingual dataset. We than use our dataset and the output of the teacher to create our own bilingual dataset. We then can train our model based on the new data and get better results than training only on the small bilingual dataset we had before. For extraction we will use different strategies and compare them with eacht other to get the best results.
+Consider the following scenario. You want to train a machine learning model to translate between languages but you don't have enough bilingual data to train it accurate. We suggest a simple solution. The idea is quite simple. We use an already trained teacher model and query it on a big monolingual dataset. We than use our dataset and the output of the teacher to create our own bilingual dataset. We then can train our model based on the new data and get better results than training only on the small bilingual dataset we had before. For extraction we will use different strategies and compare them to get the best results.
 
 ## Pre-processing 
 
@@ -23,7 +23,18 @@ For development we also crop the created datasets. They then contain only 10 sen
 
 ## Model
 
+#### Teacher models
+As our teacher models, we use pre-trained models from the [Machine Translation Group at the UEDIN](http://data.statmt.org/). The script [download.sh](./models/download.sh) downloads 3 teacher models (en-de, cs-en, en-cs). For Inference we use the [marian](https://marian-nmt.github.io/)-Framework in the script [infer_teacher_all.sh](./models/infer_teacher_all.sh). 
+
+#### Student models
+
+`TODO`
+
+---------------------------------
 `TODO: used model, extraction, training of students based on small and new datasets`
+
+---------------------------------
+`TODO: eval.py - documentation`
 
 ## File Types 
 
@@ -31,9 +42,9 @@ Here is a brief explonation of the files that are created during execution.
 
 #### Datasets <a name="datasets"></a>
 
-These files are the paralel corpus. E.g. take _train.cs-en.en_ and _train.cs-en.cs_ in [data/original](./data/original/). Both contain sentences in either english for the .en file or in czech for the .cs file. So line _x_ of file _a_ is the translation of line _x_ in file _b_ and vica versa. Thats's the same for _eval_ and _test_ files.
+These files are the paralel corpus. E.g. take _train.cs-en.en_ and _train.cs-en.cs_ from [data/original](./data/original/). Both contain sentences in either english for the .en file or in czech for the .cs file. So line _x_ of file _a_ is the translation of line _x_ in file _b_ and vica versa. This also holds for _eval_ and _test_ files.
 
-The same also holds for files in [data/experiment/](data/experiment/). But this time the datasets are the ones that have been extracted from the teacher model.
+The same holds for files in [data/experiment/](data/experiment/). But this time the datasets are the ones that have been extracted from the teacher model.
 
 #### Outputs
 
