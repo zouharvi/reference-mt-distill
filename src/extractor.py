@@ -44,11 +44,19 @@ def extractor_wrap(func):
 
 
 @extractor_wrap
-def top_k(nbest, scorer, k):
+def top_k_one(nbest, scorer, k):
     """
     Take top k-th scoring candidate according to the scorer
     """
     yield sorted(nbest, key=scorer)[k]
+
+@extractor_wrap
+def top_k(nbest, scorer, k):
+    """
+    Take top k scoring candidates according to the scorer
+    """
+    for candidate in sorted(nbest, key=scorer)[:k]:
+        yield candidate
 
 
 @extractor_wrap

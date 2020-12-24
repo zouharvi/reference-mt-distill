@@ -8,7 +8,7 @@ in larger pieces.
 
 
 import file_utils
-from extractor import top_k, atleast_k, original, aggregator
+from extractor import top_k, top_k_one, atleast_k, original, aggregator
 import os
 
 META_LANGS = [
@@ -44,7 +44,7 @@ META_RECIPES = [
         'fnew': 'experiment/b2/LPAIRTRUE',
         'spm_model': 'models/teacher/LPAIRTRUE/vocab.spm',
         'generator_partial': aggregator(recipe=[
-            (1, top_k(scorer=lambda x: x.score, k=1)),
+            (1, top_k_one(scorer=lambda x: x.score, k=1)),
         ]),
     },
     {
@@ -53,7 +53,7 @@ META_RECIPES = [
         'fnew': 'experiment/b3/LPAIRTRUE',
         'spm_model': 'models/teacher/LPAIRTRUE/vocab.spm',
         'generator_partial': aggregator(recipe=[
-            (1, atleast_k(scorer=lambda x: x.score, k=-np.inf)),
+            (1, top_k(scorer=lambda x: x.score, k=12)),
         ]),
     },
 ]
