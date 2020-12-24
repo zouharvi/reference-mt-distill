@@ -7,8 +7,8 @@ filename="${filename%.*}"
 
 qsub \
     -q 'gpu*' \
-    -l gpu=4,gpu_ram=3G \
-    -pe smp 4 \
+    -l gpu=6,gpu_ram=3G \
+    -pe smp 6 \
     -cwd \
     -o ./cluster_logs/$filename.olog \
     -e ./cluster_logs/$filename.elog \

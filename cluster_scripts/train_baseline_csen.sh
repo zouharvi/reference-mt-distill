@@ -10,7 +10,7 @@ marian \
     -t data/original/train.cs-en.cs data/original/train.cs-en.en \
     -v models/student/baseline/csen/b1/vocab.spm models/student/baseline/csen/b1/vocab.spm \
     --valid-sets data/original/eval.cs-en.cs data/original/eval.cs-en.en \
-    --devices 0 1 2 3 \
+    --devices 0 1 2 3 4 5 \
     --valid-metrics bleu \
     --overwrite \
     --keep-best \
