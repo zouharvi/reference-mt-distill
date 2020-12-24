@@ -1,0 +1,79 @@
+\documentclass[final]{cvpr}
+
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+% Include other packages here, before hyperref.
+
+\usepackage[pagebackref=true,breaklinks=true,colorlinks,bookmarks=false]{hyperref}
+
+%%%%%%%%% PAPER ID  - PLEASE UPDATE
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+%\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+\def\confYear{CVPR 2021}
+
+\input{MACROS.tex}
+
+\author{Vilém Zouhar, Philipp Zimmermann}
+
+\begin{document}
+
+\title{Proposal: Almost Black-Box MT Model Stealing with Reference Translations Supersampling}
+
+\maketitle
+\thispagestyle{empty}
+
+
+%%%%%%%%% BODY TEXT - ENTER YOUR RESPONSE BELOW
+\section{Problem Statement}
+
+We plan to work on stealing a neural-based machine translation model via translation querying and comparison to reference translations and teacher score.
+
+\section{Motivation}
+
+Model stealing is a practical concern for production MT systems \cite{wallace2020imitation}. Therefore we wish to document another approach which strengthens this claim. The method could also be used for distillation in general.
+
+\section{Proposed Strategy}
+
+After querying then comparing these translations to references and supersampling the train dataset based on (1) distance to the reference translation and (2) decoder confidence. The closer it is to the reference or the higher confidence it has, the more supersampled it is going to be.
+
+\section{Related work}
+
+The authors of \cite{SpeedOptMS} presented student models that distil knowledge from a larger teacher model without loss in BLEU performance. These models are significantly faster and do not require a GPU for inference. Their way of manipulating the queried data was based on target sentence quality \textit{without reference and teacher score}.
+
+\section{Existing code/software}
+
+We wish to use MarianNMT \cite{mariannmt} because we have access to pre-trained NMT models which can be used as teachers. One of us also has practical experience with this framework and knows how to, e.g. extract sentence confidence.
+
+\section{Implementation}
+
+Reference and inferred data loading and processing, sentence similarity metrics, sentence supersampling based on heuristics from sentence similarity and confidence. Training of multiple models and their evaluation.
+
+\section{Evaluation - metrics}
+
+The standard metrics of MT quality is the BLEU score. Even though it is widely known to not be the best metric \cite{markables}, it is widely used and sufficient.
+
+\section{Evaluation  -  datasets}
+
+Given the pretrained model availability, we will be working with either English-Czech or English-German language pairs. Both are part of the Europarl corpus \cite{koehn2005europarl}. It is a relatively small corpus, but given our computational and time limitations, it will have to suffice.
+
+\section{Evaluation - baselines}
+
+We plan to compare the results against (1) training only on references (2) training only on translated data (3) training on the mixture of the two.
+
+\section{Success criteria}
+
+We hope that one of the metrics will result in better BLEU scores. This is, however, hard to predict. If that does not happen (negative results are also a good finding), then we will at least have a comparison between the three baselines.
+
+\section{Team}
+
+Team Mittwoch with the two members Vilém Zouhar (vilem.zouhar@gmail.com) and Philipp Zimmermann (s8phzimm@stud.uni-saarland.de).
+
+{\small
+\bibliographystyle{citation_style}
+\bibliography{bibliography}
+}
+
+\end{document}
