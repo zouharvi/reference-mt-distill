@@ -17,3 +17,7 @@ data/**/*.de
 # misc.
 .vscode
 __pycache__
+
+# cluster
+cluster_logs/*.olog
+cluster_logs/*.elog
