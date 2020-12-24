@@ -16,9 +16,20 @@ EVAL_COUNT_DOUBLE=$(( 2 * $EVAL_COUNT))
 # word count: 633, 668, 668
 sed -i "1395584d;1681528d;1796262d;" europarl-v10.de-en.tsv
 
+
 # randomly shuffle data
-shuf europarl-v10.cs-en.tsv > tmp && mv tmp europarl-v10.cs-en.tsv
-shuf europarl-v10.de-en.tsv > tmp && mv tmp europarl-v10.de-en.tsv
+get_seeded_random()
+{
+  seed="$1"
+  openssl enc -aes-256-ctr -pass pass:"$seed" -nosalt \
+    </dev/zero 2>/dev/null
+}
+cp europarl-v10.cs-en.tsv tmp1
+cp europarl-v10.de-en.tsv tmp2
+shuf --random-source=<(get_seeded_random 64) tmp1 > europarl-v10.cs-en.tsv &
+shuf --random-source=<(get_seeded_random 64) tmp2 > europarl-v10.de-en.tsv &
+wait
+rm tmp1 tmp2
 
 # create train, eval and test datasets CSEN
 head -n -$EVAL_COUNT_DOUBLE europarl-v10.cs-en.tsv | cut -f1 > original/train.cs-en.cs 
