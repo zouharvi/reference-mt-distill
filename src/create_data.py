@@ -53,7 +53,7 @@ META_RECIPES = [
         'fnew': 'experiment/b3/LPAIRTRUE',
         'spm_model': 'models/teacher/LPAIRTRUE/vocab.spm',
         'generator_partial': aggregator(recipe=[
-            (1, top_k(scorer=lambda x: x.score, k=12)),
+            (1, atleast_k(scorer=lambda x: x.score, k=-np.inf)),
         ]),
     },
 ]
