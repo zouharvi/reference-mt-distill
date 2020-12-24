@@ -1,10 +1,12 @@
 from functools import partial
 import sacrebleu
 
+
 class CandidateSent():
     """
     Small data structure for candidate filtering
     """
+
     def __init__(self, cur_src, cur_ref, new_hyp, score, spm_obj):
         self.cur_src = cur_src
         self.cur_ref = cur_ref
@@ -14,9 +16,15 @@ class CandidateSent():
 
     def bleu(self):
         """
-        Bleu of the hypothesis
+        BLEU of the hypothesis
         """
         return sacrebleu.sentence_bleu(self.new_hyp.replace(' ', '').replace('</s>', '').replace('▁', ' '), [self.cur_ref]).score
+
+    def ter(self):
+        """
+        TER of the hypothesis
+        """
+        return sacrebleu.sentence_ter(self.new_hyp.replace(' ', '').replace('</s>', '').replace('▁', ' '), [self.cur_ref]).score
 
     def spm_diff(self):
         """
@@ -34,12 +42,14 @@ def extractor_wrap(func):
         return partial(func, **args)
     return f
 
+
 @extractor_wrap
 def top_k(nbest, scorer, k):
     """
     Take top k-th scoring candidate according to the scorer
     """
     yield sorted(nbest, key=scorer)[k]
+
 
 @extractor_wrap
 def atleast_k(nbest, scorer, k):
@@ -48,6 +58,7 @@ def atleast_k(nbest, scorer, k):
     """
     for x in [x for x in nbest if scorer(x) >= k]:
         yield x
+
 
 @extractor_wrap
 def original(nbest):
@@ -61,6 +72,7 @@ def original(nbest):
         nbest[0].score,
         nbest[0].spm_obj,
     )
+
 
 @extractor_wrap
 def aggregator(candidate_list, recipe):
