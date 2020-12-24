@@ -32,7 +32,16 @@ META_RECIPES = [
     {
         'forig': 'original',
         'ftrans': 'teacher/train.LPAIRORIG.LTGT',
-        'fnew': 'experiment/top1score/LPAIRTRUE',
+        'fnew': 'experiment/b1/LPAIRTRUE',
+        'spm_model': 'models/teacher/LPAIRTRUE/vocab.spm',
+        'generator_partial': aggregator(recipe=[
+            (1, original()),
+        ]),
+    },
+    {
+        'forig': 'original',
+        'ftrans': 'teacher/train.LPAIRORIG.LTGT',
+        'fnew': 'experiment/b2/LPAIRTRUE',
         'spm_model': 'models/teacher/LPAIRTRUE/vocab.spm',
         'generator_partial': aggregator(recipe=[
             (1, top_k(scorer=lambda x: x.score, k=1)),
@@ -41,10 +50,10 @@ META_RECIPES = [
     {
         'forig': 'original',
         'ftrans': 'teacher/train.LPAIRORIG.LTGT',
-        'fnew': 'experiment/top3score/LPAIRTRUE',
+        'fnew': 'experiment/b3/LPAIRTRUE',
         'spm_model': 'models/teacher/LPAIRTRUE/vocab.spm',
         'generator_partial': aggregator(recipe=[
-            (1, top_k(scorer=lambda x: x.score, k=3)),
+            (1, top_k(scorer=lambda x: x.score, k=12)),
         ]),
     },
 ]
