@@ -8,8 +8,14 @@ in larger pieces.
 
 
 import file_utils
-from extractor import top_k, top_k_one, atleast_k, original, aggregator
+from extractor import top_k, top_kth, atleast, original, aggregator
 import os
+import argparse
+
+parser = argparse.ArgumentParser(description='Create experiment datasets')
+parser.add_argument('-r','--recipes', nargs='+', help='Recipes', required=True)
+args = parser.parse_args()
+args.recipes = set(args.recipes)
 
 META_LANGS = [
     ('cs-en', 'csen'),
@@ -17,70 +23,58 @@ META_LANGS = [
     ('de-en', 'ende'),
 ]
 
-# forig:     folder with train.LPAIRORIG.LSRC and train.LPAIRORIG.LTGT
-# ftrans:    translated target language by the teacher
-# fnew:      folder where train.LPAIRORIG.LSRC and train.LPAIRORIG.LTGT will be placed
-# spm_model: path to sentence piece model
-# generator_partial: new data generator
 # every recipe is a tuple of number of repetitions and a generator
 # examples:
 # (1, original()),
 # (5, top_k(scorer=lambda x: x.score, k=1)),
-# (1, atleast_k(scorer=lambda x: x.score, k=-0.1)),
+# (1, atleast(scorer=lambda x: x.score, threshold=-0.1)),
 
-META_RECIPES = [
-    {
-        'forig': 'original',
-        'ftrans': 'teacher/train.LPAIRORIG.LTGT',
-        'fnew': 'experiment/b1/LPAIRTRUE',
-        'spm_model': 'models/teacher/LPAIRTRUE/vocab.spm',
-        'generator_partial': aggregator(recipe=[
-            (1, original()),
-        ]),
-    },
-    {
-        'forig': 'original',
-        'ftrans': 'teacher/train.LPAIRORIG.LTGT',
-        'fnew': 'experiment/b2/LPAIRTRUE',
-        'spm_model': 'models/teacher/LPAIRTRUE/vocab.spm',
-        'generator_partial': aggregator(recipe=[
-            (1, top_k_one(scorer=lambda x: x.score, k=1)),
-        ]),
-    },
-    {
-        'forig': 'original',
-        'ftrans': 'teacher/train.LPAIRORIG.LTGT',
-        'fnew': 'experiment/b3/LPAIRTRUE',
-        'spm_model': 'models/teacher/LPAIRTRUE/vocab.spm',
-        'generator_partial': aggregator(recipe=[
-            (1, top_k(scorer=lambda x: x.score, k=12)),
-        ]),
-    },
-]
+META_RECIPES = {
+    'b1': aggregator(recipe=[
+        (1, original()),
+    ]),
+    'b2': aggregator(recipe=[
+        (1, top_kth(scorer=lambda x: x.score, k=1)),
+    ]),
+    'b3': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.score, k=12)),
+    ]),
+    'm1': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.bleu(), k=1)),
+    ]),
+    'm2': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.ter(), k=1)),
+    ]),
+    'm3': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=1)),
+    ]),
+    'g1': aggregator(recipe=[
+        (1, atleast(scorer=lambda x: x.bleu(), threshold=70)),
+    ]),
+    'g2': aggregator(recipe=[
+        (1, atleast(scorer=lambda x: x.ter(), threshold=0.6)),
+    ]),
+}
 
 for lpairorig, lpairtrue in META_LANGS:
     lsrc = lpairtrue[:2]
     ltgt = lpairtrue[2:]
-    for recipe_i, meta_recipe in enumerate(META_RECIPES):
-        print(f'Processing recipe #{recipe_i} for {lpairtrue}')
+    for meta_recipe_name, meta_recipe_generator in META_RECIPES.items():
+        if not meta_recipe_name in args.recipes:
+            continue
+        print(f'Processing recipe #{meta_recipe_name} for {lpairtrue}')
 
-        # replace capital variables in the recipe
-        meta_recipe = {
-            k: (
-                v.replace('LPAIRTRUE', lpairtrue).replace('LPAIRORIG', lpairorig).
-                replace('LSRC',  lsrc).replace('LTGT', ltgt)
-                if isinstance(v, str) else v
-            )
-            for k, v in meta_recipe.items()
-        }
+        meta_recipe = {}
+        meta_recipe['generator_partial'] = meta_recipe_generator
+
+        meta_recipe['ftrans'] = f'teacher/train.{lpairorig}.{ltgt}'
+        meta_recipe['spm_model'] = f'models/teacher/{lpairtrue}/vocab.spm'
 
         # create new keys and delete the old ones
-        meta_recipe['fsrc'] = f'{meta_recipe["forig"]}/train.{lpairorig}.{lsrc}'
-        meta_recipe['ftgt'] = f'{meta_recipe["forig"]}/train.{lpairorig}.{ltgt}'
-        del meta_recipe["forig"]
-        meta_recipe['fnew_src'] = f'{meta_recipe["fnew"]}/train.{lpairorig}.{lsrc}'
-        meta_recipe['fnew_tgt'] = f'{meta_recipe["fnew"]}/train.{lpairorig}.{ltgt}'
-        del meta_recipe["fnew"]
+        meta_recipe['fsrc'] = f'original/train.{lpairorig}.{lsrc}'
+        meta_recipe['ftgt'] = f'original/train.{lpairorig}.{ltgt}'
+        meta_recipe['fnew_src'] = f'experiment/{meta_recipe_name}/{lpairtrue}/train.{lpairorig}.{lsrc}'
+        meta_recipe['fnew_tgt'] = f'experiment/{meta_recipe_name}/{lpairtrue}/train.{lpairorig}.{ltgt}'
 
         # run the job
         file_utils.load_process_save(**meta_recipe)

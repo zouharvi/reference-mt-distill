@@ -9,7 +9,7 @@ enc-depth: 6
 enc-type: bidirectional
 tied-embeddings-all: true
 transformer-decoder-autoreg: rnn
-transformer-dim-ffn: 2048
+transformer-dim-ffn: 1024
 transformer-ffn-activation: relu
 transformer-ffn-depth: 2
 transformer-guided-alignment-layer: last

@@ -17,6 +17,8 @@ marian \
     --valid-sets data/original/eval.$LANGSOURCE.$LANG1 data/original/eval.$LANGSOURCE.$LANG2 \
     --devices 0 1 2 3 \
     --valid-metrics bleu \
-    --overwrite \
-    --keep-best \
-    --early-stopping 10 \
+    --overwrite --keep-best \
+    --early-stopping 20 \
+    --valid-log ./cluster_logs/$EXP.$LANG1.$LANG2.vlog \
+    --shuffle-in-ram \
+    

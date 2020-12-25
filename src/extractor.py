@@ -44,7 +44,7 @@ def extractor_wrap(func):
 
 
 @extractor_wrap
-def top_k_one(nbest, scorer, k):
+def top_kth(nbest, scorer, k):
     """
     Take top k-th scoring candidate according to the scorer
     """
@@ -60,11 +60,11 @@ def top_k(nbest, scorer, k):
 
 
 @extractor_wrap
-def atleast_k(nbest, scorer, k):
+def atleast(nbest, scorer, threshold):
     """
     Take any number of scoring candidates with score at least k 
     """
-    for x in [x for x in nbest if scorer(x) >= k]:
+    for x in [x for x in nbest if scorer(x) >= threshold]:
         yield x
 
 
