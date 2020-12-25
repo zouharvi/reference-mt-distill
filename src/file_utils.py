@@ -52,7 +52,7 @@ def saver(fnew_src, fnew_tgt, candidate_list, spm_obj, prefix='data/'):
     with open(prefix + fnew_src, 'w') as fnew_src, open(prefix + fnew_tgt, 'w') as fnew_tgt:
         for candidate in candidate_list:
             fnew_src.write(candidate.cur_src + '\n')
-            fnew_tgt.write(spm_obj.decode(candidate.new_hyp) + '\n')
+            fnew_tgt.write(spm_obj.decode(candidate.new_hyp.split(' ')) + '\n')
 
 
 def load_process_save(fsrc, ftgt, ftrans, generator_partial, fnew_src, fnew_tgt, spm_model):

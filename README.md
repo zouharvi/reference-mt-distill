@@ -24,7 +24,7 @@ For development we also crop the created datasets. They then contain only 10 sen
 ## Model
 
 #### Teacher models
-As our teacher models, we use pre-trained models from the [Machine Translation Group at the UEDIN](http://data.statmt.org/). The script [download.sh](./models/download.sh) downloads 3 teacher models (en-de, cs-en, en-cs). For Inference we use the [marian](https://marian-nmt.github.io/)-Framework in the script [infer_teacher_all.sh](./models/infer_teacher_all.sh). 
+As our teacher models, we use pre-trained models from the [Machine Translation Group at the UEDIN](http://data.statmt.org/). The script [download.sh](./models/download.sh) downloads 3 teacher models (en-de, cs-en, en-cs). For Inference we use the [mMrian](https://marian-nmt.github.io/)-Framework in the script [infer_teacher_all.sh](./models/infer_teacher_all.sh). 
 
 #### Student models
 
@@ -51,3 +51,35 @@ The same holds for files in [data/experiment/](data/experiment/). But this time 
 The output files that are created contain the provided sentences, the scores and the best hypotheses. All information sepperated by \' ||| \'.  
 
 `TODO: add more files and their descriptions` 
+
+
+## Experiment composition
+
+N*T(metrics, k) := take __k__-th sentences according to __metrics__ and output them __N__ times. If __N__ is not given, assume 1.
+
+N*A(metrics, min) := take all sentences with __metrics__ of at least __min__.
+
+### Baseline
+- B1: original data
+- B2: T(score, 1)
+- B3: T(score, 12)
+
+### Metrics
+- M1: T(bleu, 1)
+- M2: T(ter, 1)
+- M3: T(subword, 1)
+
+### Guaranteed:
+- G1: A(bleu, 40)
+- G2: A(ter, ???) 
+
+### Scaling:
+- S1: 3*T(bleu, 1) + 2*T(bleu, 2) + 3*T(bleu, 3)
+- S2: 3*T(score, 1) + 2*T(score, 2) + 3*T(score, 3)
+- S3: 3*T(ter, 1) + 2*T(ter 2) + 3*T(ter 3)
+
+### Combination
+- C1: S1 + S2 + S3
+- C2: S1 + S2 + S3 + original
+
+The reasoning for B3 is that in all other cases we can pick at most 9 different sentences. By showing that C1 performs better than B3, we demonstrate that the performance is not only based on vocab size.

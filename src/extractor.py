@@ -76,7 +76,7 @@ def original(nbest):
     yield CandidateSent(
         nbest[0].cur_src,
         nbest[0].cur_ref,
-        nbest[0].cur_ref,
+        ' '.join(nbest[0].spm_obj.encode(nbest[0].cur_ref, out_type=str)),
         nbest[0].score,
         nbest[0].spm_obj,
     )
