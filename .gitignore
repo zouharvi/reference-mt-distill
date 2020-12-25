@@ -4,8 +4,7 @@ models/**/*.bin
 models/**/*.spm
 models/**/*.s2t.gz
 models/**/*.tar
-models/teacher/encs/*.yml
-models/teacher/csen/*.yml
+models/**/*.yml
 
 # corpora
 *.tsv.gz

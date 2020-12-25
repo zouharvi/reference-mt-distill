@@ -16,9 +16,8 @@ marian \
     -v models/experiment/$EXP/$LANG1$LANG2/vocab.spm models/experiment/$EXP/$LANG1$LANG2/vocab.spm \
     --valid-sets data/original/eval.$LANGSOURCE.$LANG1 data/original/eval.$LANGSOURCE.$LANG2 \
     --devices 0 1 2 3 \
+    --sync-sgd \
     --valid-metrics bleu \
     --overwrite --keep-best \
     --early-stopping 20 \
-    --valid-log ./cluster_logs/$EXP.$LANG1.$LANG2.vlog \
     --shuffle-in-ram \
-    
