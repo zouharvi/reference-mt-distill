@@ -1,5 +1,6 @@
 # raw models
 models/**/*.npz
+models/**/*$$
 models/**/*.bin
 models/**/*.spm
 models/**/*.s2t.gz
@@ -21,6 +22,7 @@ __pycache__
 cluster_logs/*.olog
 cluster_logs/*.elog
 cluster_logs/*.log
+tmp
 
 # tmp submit scripts
 .*.sh
