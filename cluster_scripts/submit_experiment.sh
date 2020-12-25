@@ -12,8 +12,8 @@ for EXP in $EXPERIMENTS; do
         -l gpu=4,gpu_ram=3G \
         -pe smp 4 \
         -cwd \
-        -o ./cluster_logs/$EXP.csen.olog \
-        -e ./cluster_logs/$EXP.csen.elog \
+        -j y \
+        -o ./cluster_logs/$EXP.csen.log \
         .q.$EXP.csen.sh
 
     echo -e "\n\nExperiment $EXP, language en-cs, source: {train,eval}.cs-en.{en,cs}"
@@ -24,8 +24,8 @@ for EXP in $EXPERIMENTS; do
         -l gpu=4,gpu_ram=3G \
         -pe smp 4 \
         -cwd \
-        -o ./cluster_logs/$EXP.encs.olog \
-        -e ./cluster_logs/$EXP.encs.elog \
+        -j y \
+        -o ./cluster_logs/$EXP.encs.log \
         .q.$EXP.encs.sh
 
     echo -e "\n\nExperiment $EXP, language en-de, source: {train,eval}.de-en.{en,de}"
@@ -36,7 +36,7 @@ for EXP in $EXPERIMENTS; do
         -l gpu=4,gpu_ram=3G \
         -pe smp 4 \
         -cwd \
-        -o ./cluster_logs/$EXP.ende.olog \
-        -e ./cluster_logs/$EXP.ende.elog \
+        -j y \
+        -o ./cluster_logs/$EXP.ende.log \
         .q.$EXP.ende.sh
 done

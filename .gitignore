@@ -21,3 +21,7 @@ __pycache__
 # cluster
 cluster_logs/*.olog
 cluster_logs/*.elog
+cluster_logs/*.log
+
+# tmp submit scripts
+.*.sh
