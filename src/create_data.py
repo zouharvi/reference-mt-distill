@@ -67,7 +67,7 @@ META_RECIPES = {
     'g3': aggregator(recipe=[
         (1, atleast(scorer=lambda x: x.spm_diff(), threshold=-1)),
     ]),
-    'g3': aggregator(recipe=[
+    'g4': aggregator(recipe=[
         (1, atleast(scorer=lambda x: x.score, threshold=-0.1)),
     ]),
     's1': aggregator(recipe=[

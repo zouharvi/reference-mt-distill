@@ -76,7 +76,7 @@ N\*G(metrics, min) := take all sentences with __metrics__ of at least __min__.
 - G1: G(bleu, 65/60/55)
 - G2: G(chrf, 0.9/0.85/0.8) 
 - G3: G(spm\_diff, -1/-2/-1) 
-- G4: G(score, -0.1/-0.08/-0.12) 
+- G4: G(score, -0.08/-0.1/-0.12) 
 
 ### Scaling:
 - S1: 4\*T(bleu, 1) + 3\*T(bleu, 2) + 2\*T(bleu, 3) + 1\*T(bleu, 4)
