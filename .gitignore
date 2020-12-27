@@ -26,3 +26,6 @@ tmp
 
 # tmp submit scripts
 .*.sh
+
+# marian
+core
