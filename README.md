@@ -68,11 +68,14 @@ N\*A(metrics, min) := take all sentences with __metrics__ of at least __min__.
 - M1: T(bleu, 1)
 - M2: T(chrf, 1)
 - M3: T(subword, 1)
+- N1: T(bleu, 4)
+- N2: T(chrf, 4)
+- N3: T(subword, 4)
 
 ### Guaranteed:
-- G1: A(bleu, 50)
-- G2: A(chrf, 0.8) 
-- G2: A(spm\_diff, -7) 
+- G1: A(bleu, 65/60/55)
+- G2: A(chrf, 0.9/0.85/0.8) 
+- G2: A(spm\_diff, -1/-2/-1) 
 
 ### Scaling:
 - S1: 3\*T(bleu, 1) + 2\*T(bleu, 2) + 3\*T(bleu, 3)

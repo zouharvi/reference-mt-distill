@@ -49,6 +49,15 @@ META_RECIPES = {
     'm3': aggregator(recipe=[
         (1, top_k(scorer=lambda x: x.spm_diff(), k=1)),
     ]),
+    'n1': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.bleu(), k=4)),
+    ]),
+    'n2': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.ter(), k=4)),
+    ]),
+    'n3': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=4)),
+    ]),
     'g1': aggregator(recipe=[
         (1, atleast(scorer=lambda x: x.bleu(), threshold=65)),
     ]),
@@ -57,6 +66,53 @@ META_RECIPES = {
     ]),
     'g3': aggregator(recipe=[
         (1, atleast(scorer=lambda x: x.spm_diff(), threshold=-1)),
+    ]),
+    's1': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.bleu(), k=1)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=2)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=3)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=4)),
+    ]),
+    's2': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.ter(), k=1)),
+        (1, top_k(scorer=lambda x: x.ter(), k=2)),
+        (1, top_k(scorer=lambda x: x.ter(), k=3)),
+        (1, top_k(scorer=lambda x: x.ter(), k=4)),
+    ]),
+    's3': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=1)),
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=2)),
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=3)),
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=4)),
+    ]),
+    'c1': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.bleu(), k=1)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=2)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=3)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=4)),
+        (1, top_k(scorer=lambda x: x.ter(), k=1)),
+        (1, top_k(scorer=lambda x: x.ter(), k=2)),
+        (1, top_k(scorer=lambda x: x.ter(), k=3)),
+        (1, top_k(scorer=lambda x: x.ter(), k=4)),
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=1)),
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=2)),
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=3)),
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=4)),
+    ]),
+    'c2': aggregator(recipe=[
+        (1, original()),
+        (1, top_k(scorer=lambda x: x.bleu(), k=1)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=2)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=3)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=4)),
+        (1, top_k(scorer=lambda x: x.ter(), k=1)),
+        (1, top_k(scorer=lambda x: x.ter(), k=2)),
+        (1, top_k(scorer=lambda x: x.ter(), k=3)),
+        (1, top_k(scorer=lambda x: x.ter(), k=4)),
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=1)),
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=2)),
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=3)),
+        (1, top_k(scorer=lambda x: x.spm_diff(), k=4)),
     ]),
 }
 
