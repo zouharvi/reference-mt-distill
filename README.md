@@ -77,7 +77,7 @@ N\*A(metrics, min) := take all sentences with __metrics__ of at least __min__.
 ### Scaling:
 - S1: 3\*T(bleu, 1) + 2\*T(bleu, 2) + 3\*T(bleu, 3)
 - S2: 3\*T(score, 1) + 2\*T(score, 2) + 3\*T(score, 3)
-- S3: 3\*T(ter, 1) + 2\*T(ter 2) + 3\*T(ter 3)
+- S3: 3\*T(chrf, 1) + 2\*T(chrf 2) + 3\*T(chrf 3)
 
 ### Combination
 - C1: S1 + S2 + S3
