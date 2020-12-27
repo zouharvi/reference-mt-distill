@@ -14,14 +14,15 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Create experiment datasets')
 parser.add_argument('-r','--recipes', nargs='+', help='Recipes', required=True)
+parser.add_argument('-l','--langs', nargs='+', help='Languages', required=True)
 args = parser.parse_args()
 args.recipes = set(args.recipes)
 
-META_LANGS = [
-    ('cs-en', 'csen'),
-    ('cs-en', 'encs'),
-    ('de-en', 'ende'),
-]
+META_LANGS = {
+    'csen': 'cs-en',
+    'encs': 'cs-en',
+    'ende': 'de-en',
+}
 
 # every recipe is a tuple of number of repetitions and a generator
 # examples:
@@ -59,7 +60,9 @@ META_RECIPES = {
     ]),
 }
 
-for lpairorig, lpairtrue in META_LANGS:
+for lpairtrue, lpairorig in META_LANGS.items():
+    if not lpairtrue in args.langs:
+        continue
     lsrc = lpairtrue[:2]
     ltgt = lpairtrue[2:]
     for meta_recipe_name, meta_recipe_generator in META_RECIPES.items():
