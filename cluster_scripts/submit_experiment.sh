@@ -1,13 +1,25 @@
 #!/bin/bash
 
+confirm() {
+    # call with a prompt string or use a default
+    read -r -p "${1:- [y/N]} " response
+    case "$response" in
+        [yY][eE][sS]|[yY]) 
+            true
+            ;;
+        *)
+            false
+            ;;
+    esac
+}
+
 mkdir -p cluster_logs tmp
 
 EXPERIMENTS=$1
 for EXP in $EXPERIMENTS; do
     echo -en "\nExperiment $EXP, language cs-en, source: {train,eval}.cs-en.{cs,en}"
-    read _
     echo -e "#!/bin/bash\ncluster_scripts/train_experiment.sh $EXP cs-en cs en" > tmp/e.$EXP.csen.sh
-    qsub \
+    confirm && qsub \
         -q 'gpu*' \
         -l gpu=4,gpu_ram=3G \
         -pe smp 4 \
@@ -17,9 +29,8 @@ for EXP in $EXPERIMENTS; do
         tmp/e.$EXP.csen.sh
 
     echo -en "\nExperiment $EXP, language en-cs, source: {train,eval}.cs-en.{en,cs}"
-    read _
     echo -e "#!/bin/bash\ncluster_scripts/train_experiment.sh $EXP cs-en en cs" > tmp/e.$EXP.encs.sh
-    qsub \
+    confirm && qsub \
         -q 'gpu*' \
         -l gpu=4,gpu_ram=3G \
         -pe smp 4 \
@@ -29,9 +40,8 @@ for EXP in $EXPERIMENTS; do
         tmp/e.$EXP.encs.sh
 
     echo -en "\nExperiment $EXP, language en-de, source: {train,eval}.de-en.{en,de}"
-    read _
     echo -e "#!/bin/bash\ncluster_scripts/train_experiment.sh $EXP de-en en de" > tmp/e.$EXP.ende.sh
-    qsub \
+    confirm && qsub \
         -q 'gpu*' \
         -l gpu=4,gpu_ram=3G \
         -pe smp 4 \
