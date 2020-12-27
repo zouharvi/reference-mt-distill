@@ -78,9 +78,10 @@ N\*A(metrics, min) := take all sentences with __metrics__ of at least __min__.
 - G2: A(spm\_diff, -1/-2/-1) 
 
 ### Scaling:
-- S1: 3\*T(bleu, 1) + 2\*T(bleu, 2) + 3\*T(bleu, 3)
-- S2: 3\*T(score, 1) + 2\*T(score, 2) + 3\*T(score, 3)
-- S3: 3\*T(chrf, 1) + 2\*T(chrf 2) + 3\*T(chrf 3)
+- S1: 4\*T(bleu, 1) + 3\*T(bleu, 2) + 2\*T(bleu, 3) + 1\*T(bleu, 4)
+- S2: 4\*T(score, 1) + 3\*T(score, 2) + 2\*T(score, 3) + 1\*T(score, 4)
+- S3: 4\*T(chrf, 1) + 3\*T(chrf, 2) + 2\*T(chrf, 3) + 1\*T(chrf, 4)
+- S4: 4\*T(score, 1) + 3\*T(score, 2) + 2\*T(score, 3) + 1\*T(score, 4)
 
 ### Combination
 - C1: S1 + S2 + S3

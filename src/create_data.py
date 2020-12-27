@@ -76,6 +76,9 @@ META_RECIPES = {
     's3': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.spm_diff(), ks=[4, 3, 2, 1])),
     ]),
+    's4': aggregator(recipe=[
+        (1, top_k_fast(scorer=lambda x: x.score, ks=[4, 3, 2, 1])),
+    ]),
     'c1': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[4, 3, 2, 1])),
         (1, top_k_fast(scorer=lambda x: x.ter(), ks=[4, 3, 2, 1])),
