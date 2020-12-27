@@ -26,6 +26,12 @@ class CandidateSent():
         """
         return sacrebleu.sentence_ter(self.new_hyp.replace(' ', '').replace('</s>', '').replace('▁', ' '), [self.cur_ref]).score
 
+    def chrf(self):
+        """
+        ChRF of the hypothesis
+        """
+        return sacrebleu.sentence_chrf(self.new_hyp.replace(' ', '').replace('</s>', '').replace('▁', ' '), [self.cur_ref]).score
+
     def spm_diff(self):
         """
         Difference in subword unit counts

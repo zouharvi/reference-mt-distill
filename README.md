@@ -55,9 +55,9 @@ The output files that are created contain the provided sentences, the scores and
 
 ## Experiment composition
 
-N*T(metrics, k) := take __k__-th sentences according to __metrics__ and output them __N__ times. If __N__ is not given, assume 1.
+N\*T(metrics, k) := take __k__-th sentences according to __metrics__ and output them __N__ times. If __N__ is not given, assume 1.
 
-N*A(metrics, min) := take all sentences with __metrics__ of at least __min__.
+N\*A(metrics, min) := take all sentences with __metrics__ of at least __min__.
 
 ### Baseline
 - B1: original data
@@ -66,17 +66,18 @@ N*A(metrics, min) := take all sentences with __metrics__ of at least __min__.
 
 ### Metrics
 - M1: T(bleu, 1)
-- M2: T(ter, 1)
+- M2: T(chrf, 1)
 - M3: T(subword, 1)
 
 ### Guaranteed:
-- G1: A(bleu, 40)
-- G2: A(ter, ???) 
+- G1: A(bleu, 50)
+- G2: A(chrf, 0.8) 
+- G2: A(spm\_diff, -7) 
 
 ### Scaling:
-- S1: 3*T(bleu, 1) + 2*T(bleu, 2) + 3*T(bleu, 3)
-- S2: 3*T(score, 1) + 2*T(score, 2) + 3*T(score, 3)
-- S3: 3*T(ter, 1) + 2*T(ter 2) + 3*T(ter 3)
+- S1: 3\*T(bleu, 1) + 2\*T(bleu, 2) + 3\*T(bleu, 3)
+- S2: 3\*T(score, 1) + 2\*T(score, 2) + 3\*T(score, 3)
+- S3: 3\*T(ter, 1) + 2\*T(ter 2) + 3\*T(ter 3)
 
 ### Combination
 - C1: S1 + S2 + S3
