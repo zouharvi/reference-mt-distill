@@ -8,7 +8,7 @@ in larger pieces.
 
 
 import file_utils
-from extractor import top_k, top_kth, atleast, original, aggregator
+from extractor import top_k, top_k_fast, top_kth, atleast, original, aggregator
 import os
 import argparse
 
@@ -68,51 +68,24 @@ META_RECIPES = {
         (1, atleast(scorer=lambda x: x.spm_diff(), threshold=-1)),
     ]),
     's1': aggregator(recipe=[
-        (1, top_k(scorer=lambda x: x.bleu(), k=1)),
-        (1, top_k(scorer=lambda x: x.bleu(), k=2)),
-        (1, top_k(scorer=lambda x: x.bleu(), k=3)),
-        (1, top_k(scorer=lambda x: x.bleu(), k=4)),
+        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[4, 3, 2, 1])),
     ]),
     's2': aggregator(recipe=[
-        (1, top_k(scorer=lambda x: x.ter(), k=1)),
-        (1, top_k(scorer=lambda x: x.ter(), k=2)),
-        (1, top_k(scorer=lambda x: x.ter(), k=3)),
-        (1, top_k(scorer=lambda x: x.ter(), k=4)),
+        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[4, 3, 2, 1])),
     ]),
     's3': aggregator(recipe=[
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=1)),
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=2)),
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=3)),
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=4)),
+        (1, top_k_fast(scorer=lambda x: x.spm_diff(), ks=[4, 3, 2, 1])),
     ]),
     'c1': aggregator(recipe=[
-        (1, top_k(scorer=lambda x: x.bleu(), k=1)),
-        (1, top_k(scorer=lambda x: x.bleu(), k=2)),
-        (1, top_k(scorer=lambda x: x.bleu(), k=3)),
-        (1, top_k(scorer=lambda x: x.bleu(), k=4)),
-        (1, top_k(scorer=lambda x: x.ter(), k=1)),
-        (1, top_k(scorer=lambda x: x.ter(), k=2)),
-        (1, top_k(scorer=lambda x: x.ter(), k=3)),
-        (1, top_k(scorer=lambda x: x.ter(), k=4)),
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=1)),
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=2)),
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=3)),
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=4)),
+        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[4, 3, 2, 1])),
+        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[4, 3, 2, 1])),
+        (1, top_k_fast(scorer=lambda x: x.spm_diff(), ks=[4, 3, 2, 1])),
     ]),
     'c2': aggregator(recipe=[
         (1, original()),
-        (1, top_k(scorer=lambda x: x.bleu(), k=1)),
-        (1, top_k(scorer=lambda x: x.bleu(), k=2)),
-        (1, top_k(scorer=lambda x: x.bleu(), k=3)),
-        (1, top_k(scorer=lambda x: x.bleu(), k=4)),
-        (1, top_k(scorer=lambda x: x.ter(), k=1)),
-        (1, top_k(scorer=lambda x: x.ter(), k=2)),
-        (1, top_k(scorer=lambda x: x.ter(), k=3)),
-        (1, top_k(scorer=lambda x: x.ter(), k=4)),
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=1)),
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=2)),
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=3)),
-        (1, top_k(scorer=lambda x: x.spm_diff(), k=4)),
+        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[4, 3, 2, 1])),
+        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[4, 3, 2, 1])),
+        (1, top_k_fast(scorer=lambda x: x.spm_diff(), ks=[4, 3, 2, 1])),
     ]),
 }
 

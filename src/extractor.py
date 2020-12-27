@@ -64,6 +64,14 @@ def top_k(nbest, scorer, k):
     for candidate in sorted(nbest, key=scorer)[:k]:
         yield candidate
 
+@extractor_wrap
+def top_k_fast(nbest, scorer, ks):
+    """
+    Take topk scoring candidates according to the scorer and ks
+    """
+    for candidate, repetitions in zip(sorted(nbest, key=scorer), ks):
+        for _ in range(repetitions):
+            yield candidate
 
 @extractor_wrap
 def atleast(nbest, scorer, threshold):
