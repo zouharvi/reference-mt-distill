@@ -57,7 +57,7 @@ The output files that are created contain the provided sentences, the scores and
 
 N\*T(metrics, k) := take __k__-th sentences according to __metrics__ and output them __N__ times. If __N__ is not given, assume 1.
 
-N\*A(metrics, min) := take all sentences with __metrics__ of at least __min__.
+N\*G(metrics, min) := take all sentences with __metrics__ of at least __min__.
 
 ### Baseline
 - B1: original data
@@ -73,9 +73,10 @@ N\*A(metrics, min) := take all sentences with __metrics__ of at least __min__.
 - N3: T(subword, 4)
 
 ### Guaranteed:
-- G1: A(bleu, 65/60/55)
-- G2: A(chrf, 0.9/0.85/0.8) 
-- G2: A(spm\_diff, -1/-2/-1) 
+- G1: G(bleu, 65/60/55)
+- G2: G(chrf, 0.9/0.85/0.8) 
+- G3: G(spm\_diff, -1/-2/-1) 
+- G4: G(score, -0.1/-0.08/-0.12) 
 
 ### Scaling:
 - S1: 4\*T(bleu, 1) + 3\*T(bleu, 2) + 2\*T(bleu, 3) + 1\*T(bleu, 4)
