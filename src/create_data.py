@@ -49,10 +49,10 @@ META_RECIPES = {
         (1, top_k(scorer=lambda x: x.spm_diff(), k=1)),
     ]),
     'g1': aggregator(recipe=[
-        (1, atleast(scorer=lambda x: x.bleu(), threshold=50)),
+        (1, atleast(scorer=lambda x: x.bleu(), threshold=60)),
     ]),
     'g2': aggregator(recipe=[
-        (1, atleast(scorer=lambda x: x.ter(), threshold=0.8)),
+        (1, atleast(scorer=lambda x: x.ter(), threshold=1.0)),
     ]),
 }
 
