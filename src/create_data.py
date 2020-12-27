@@ -54,6 +54,9 @@ META_RECIPES = {
     'g2': aggregator(recipe=[
         (1, atleast(scorer=lambda x: x.ter(), threshold=1.0)),
     ]),
+    'g3': aggregator(recipe=[
+        (1, atleast(scorer=lambda x: x.spm_diff(), threshold=-5)),
+    ]),
 }
 
 for lpairorig, lpairtrue in META_LANGS:
