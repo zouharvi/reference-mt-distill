@@ -21,7 +21,7 @@ for EXP in $EXPERIMENTS; do
     echo -e "#!/bin/bash\ncluster_scripts/train_experiment.sh $EXP cs-en cs en" > tmp/e.$EXP.csen.sh
     confirm && qsub \
         -q 'gpu*' \
-        -l gpu=4,gpu_ram=3G \
+        -l gpu=4,gpu_ram=4G \
         -pe smp 4 \
         -cwd \
         -j y \
@@ -32,7 +32,7 @@ for EXP in $EXPERIMENTS; do
     echo -e "#!/bin/bash\ncluster_scripts/train_experiment.sh $EXP cs-en en cs" > tmp/e.$EXP.encs.sh
     confirm && qsub \
         -q 'gpu*' \
-        -l gpu=4,gpu_ram=3G \
+        -l gpu=4,gpu_ram=4G \
         -pe smp 4 \
         -cwd \
         -j y \
@@ -43,7 +43,7 @@ for EXP in $EXPERIMENTS; do
     echo -e "#!/bin/bash\ncluster_scripts/train_experiment.sh $EXP de-en en de" > tmp/e.$EXP.ende.sh
     confirm && qsub \
         -q 'gpu*' \
-        -l gpu=4,gpu_ram=3G \
+        -l gpu=4,gpu_ram=4G \
         -pe smp 4 \
         -cwd \
         -j y \
