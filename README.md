@@ -84,11 +84,11 @@ N\*G(metrics, min) := take all sentences with __metrics__ of at least __min__.
 - S3: 4\*T(chrf, 1) + 3\*T(chrf, 2) + 2\*T(chrf, 3) + 1\*T(chrf, 4)
 - S4: 4\*T(score, 1) + 3\*T(score, 2) + 2\*T(score, 3) + 1\*T(score, 4)
 
-### Oversampling H:
-- H1: 2\*T(bleu, 1) + 2\*T(bleu, 2) + 1\*T(bleu, 3) + 1\*T(bleu, 4)
-- H2: 2\*T(score, 1) + 2\*T(score, 2) + 1\*T(score, 3) + 1\*T(score, 4)
-- H3: 2\*T(chrf, 1) + 2\*T(chrf, 2) + 1\*T(chrf, 3) + 1\*T(chrf, 4)
-- H4: 2\*T(score, 1) + 2\*T(score, 2) + 1\*T(score, 3) + 1\*T(score, 4)
+### Oversampling O:
+- O1: 2\*T(bleu, 1) + 2\*T(bleu, 2) + 1\*T(bleu, 3) + 1\*T(bleu, 4)
+- O2: 2\*T(score, 1) + 2\*T(score, 2) + 1\*T(score, 3) + 1\*T(score, 4)
+- O3: 2\*T(chrf, 1) + 2\*T(chrf, 2) + 1\*T(chrf, 3) + 1\*T(chrf, 4)
+- O4: 2\*T(score, 1) + 2\*T(score, 2) + 1\*T(score, 3) + 1\*T(score, 4)
 
 ### Combination
 - C1: S1 + S2 + S3

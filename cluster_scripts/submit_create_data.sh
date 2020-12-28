@@ -14,7 +14,7 @@ for LANG in $LANGS; do
         -pe smp 2 \
         -cwd \
         -j y \
-        -o ./cluster_logs/d.$EXP.$LANG.csen.log \
+        -o ./cluster_logs/d.$EXP.$LANG.log \
         tmp/d.$EXP.$LANG.sh
 done
 done

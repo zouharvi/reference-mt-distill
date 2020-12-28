@@ -117,6 +117,14 @@ META_RECIPES = {
         (1, top_k_fast(scorer=lambda x: x.spm_diff(), ks=[4, 3, 2, 1])),
         (1, top_k_fast(scorer=lambda x: x.score, ks=[4, 3, 2, 1])),
     ]),
+    'c4': aggregator(recipe=[
+        (4, original()),
+        (1, top_k(scorer=lambda x: x.score, k=12)),
+        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[4, 3, 2, 1])),
+        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[4, 3, 2, 1])),
+        (1, top_k_fast(scorer=lambda x: x.spm_diff(), ks=[4, 3, 2, 1])),
+        (1, top_k_fast(scorer=lambda x: x.score, ks=[4, 3, 2, 1])),
+    ]),
 }
 
 for lpairtrue, lpairorig in META_LANGS.items():
