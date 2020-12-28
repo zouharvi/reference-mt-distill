@@ -23,7 +23,7 @@ marian-decoder \
     --quiet-translation \
     
 marian-decoder \
-    -m "models/experiment/$EXP/ende/model.npz.best-bleu.bin" \
+    -m "models/experiment/$EXP/ende/model.bin.best-bleu.bin" \
     -v "models/experiment/$EXP/ende/vocab.spm" "models/experiment/$EXP/ende/vocab.spm" \
     -i "data/original/test.de-en.en" \
     -o "data/experiment/$EXP/test.de-en.en" \
