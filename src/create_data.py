@@ -85,16 +85,16 @@ META_RECIPES = {
     's4': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.score, ks=[4, 3, 2, 1])),
     ]),
-    'š1': aggregator(recipe=[
+    'o1': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[2, 2, 1, 1])),
     ]),
-    'š2': aggregator(recipe=[
+    'o2': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.ter(), ks=[2, 2, 1, 1])),
     ]),
-    'š3': aggregator(recipe=[
+    'o3': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.spm_diff(), ks=[2, 2, 1, 1])),
     ]),
-    'š4': aggregator(recipe=[
+    'o4': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.score, ks=[2, 2, 1, 1])),
     ]),
     'c1': aggregator(recipe=[
