@@ -7,7 +7,7 @@ EXP=$1
 mkdir -p data/teacher
 
 marian-decoder \
-    -m "models/experiment/$EXP/encs/model.bin" \
+    -m "models/experiment/$EXP/encs/model.bin.best-bleu.bin" \
     -v "models/experiment/$EXP/encs/vocab.spm" "models/teacher/encs/vocab.spm" \
     -i "data/original/test.cs-en.en" \
     -o "data/experiment/$EXP/test.cs-en.en" \
@@ -15,7 +15,7 @@ marian-decoder \
     --quiet-translation \
 
 marian-decoder \
-    -m "models/experiment/$EXP/csen/model.bin" \
+    -m "models/experiment/$EXP/csen/model.bin.best-bleu.bin" \
     -v "models/experiment/$EXP/csen/vocab.spm" "models/experiment/$EXP/csen/vocab.spm" \
     -i "data/original/test.cs-en.cs" \
     -o "data/experiment/$EXP/test.cs-en.cs" \
@@ -23,7 +23,7 @@ marian-decoder \
     --quiet-translation \
     
 marian-decoder \
-    -m "models/experiment/$EXP/ende/model.npz" \
+    -m "models/experiment/$EXP/ende/model.npz.best-bleu.bin" \
     -v "models/experiment/$EXP/ende/vocab.spm" "models/experiment/$EXP/ende/vocab.spm" \
     -i "data/original/test.de-en.en" \
     -o "data/experiment/$EXP/test.de-en.en" \
