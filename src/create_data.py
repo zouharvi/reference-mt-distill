@@ -49,6 +49,9 @@ META_RECIPES = {
     'm3': aggregator(recipe=[
         (1, top_k(scorer=lambda x: x.spm_diff(), k=1)),
     ]),
+    'm5': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.ter(), k=1)),
+    ]),
     'n1': aggregator(recipe=[
         (1, top_k(scorer=lambda x: x.bleu(), k=4)),
     ]),
@@ -60,6 +63,9 @@ META_RECIPES = {
     ]),
     'n4': aggregator(recipe=[
         (1, top_k(scorer=lambda x: x.score, k=4)),
+    ]),
+    'n5': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.ter(), k=4)),
     ]),
     'g1': aggregator(recipe=[
         (1, atleast(scorer=lambda x: x.bleu(), threshold=65)),
@@ -73,6 +79,9 @@ META_RECIPES = {
     'g4': aggregator(recipe=[
         (1, atleast(scorer=lambda x: x.score, threshold=-0.1)),
     ]),
+    'g5': aggregator(recipe=[
+        (1, atleast(scorer=lambda x: x.ter(), threshold=0.65)),
+    ]),
     's1': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[4, 3, 2, 1])),
     ]),
@@ -85,6 +94,9 @@ META_RECIPES = {
     's4': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.score, ks=[4, 3, 2, 1])),
     ]),
+    's5': aggregator(recipe=[
+        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[4, 3, 2, 1])),
+    ]),
     'o1': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[2, 2, 1, 1])),
     ]),
@@ -96,6 +108,9 @@ META_RECIPES = {
     ]),
     'o4': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.score, ks=[2, 2, 1, 1])),
+    ]),
+    'o5': aggregator(recipe=[
+        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[2, 2, 1, 1])),
     ]),
     'c1': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[4, 3, 2, 1])),
