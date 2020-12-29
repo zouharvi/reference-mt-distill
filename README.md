@@ -91,7 +91,9 @@ N\*G(metrics, min) := take all sentences with __metrics__ of at least __min__.
 - O4: 2\*T(score, 1) + 2\*T(score, 2) + 1\*T(score, 3) + 1\*T(score, 4)
 
 ### Combination
-- C1: S1 + S2 + S3
-- C2: S1 + S2 + S3 + original
+- C1
+- C2
+- C3
+- C4
 
 The reasoning for B3 is that in all other cases we can pick at most 9 different sentences. By showing that C1 performs better than B3, we demonstrate that the performance is not only based on vocab size.
