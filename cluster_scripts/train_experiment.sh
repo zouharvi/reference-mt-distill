@@ -15,7 +15,7 @@ marian \
     -t data/experiment/$EXP/$LANG1$LANG2/train.$LANGSOURCE.$LANG1 data/experiment/$EXP/$LANG1$LANG2/train.$LANGSOURCE.$LANG2 \
     -v models/experiment/$EXP/$LANG1$LANG2/vocab.spm models/experiment/$EXP/$LANG1$LANG2/vocab.spm \
     --valid-sets data/original/eval.$LANGSOURCE.$LANG1 data/original/eval.$LANGSOURCE.$LANG2 \
-    --devices 0 1 2 3 4 5 \
+    --devices 0 1 2 3 5 \
     --valid-metrics bleu \
     --overwrite --keep-best \
     --early-stopping 20 \
