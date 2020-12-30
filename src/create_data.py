@@ -80,7 +80,7 @@ META_RECIPES = {
         (1, atleast(scorer=lambda x: x.score, threshold=-0.1)),
     ]),
     'g5': aggregator(recipe=[
-        (1, atleast(scorer=lambda x: x.ter(), threshold=0.65)),
+        (1, atleast(scorer=lambda x: x.ter(), threshold=-0.7)),
     ]),
     's1': aggregator(recipe=[
         (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[4, 3, 2, 1])),
