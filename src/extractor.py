@@ -24,7 +24,7 @@ class CandidateSent():
         """
         TER of the hypothesis
         """
-        return sacrebleu.sentence_ter(self.new_hyp.replace(' ', '').replace('</s>', '').replace('▁', ' '), [self.cur_ref]).score
+        return -sacrebleu.sentence_ter(self.new_hyp.replace(' ', '').replace('</s>', '').replace('▁', ' '), [self.cur_ref]).score
 
     def chrf(self):
         """
@@ -54,24 +54,28 @@ def top_kth(nbest, scorer, k):
     """
     Take top k-th scoring candidate according to the scorer
     """
-    yield sorted(nbest, key=scorer)[k]
+    assert(k > 0)
+    yield sorted(nbest, key=scorer, reverse=True)[k-1]
+
 
 @extractor_wrap
 def top_k(nbest, scorer, k):
     """
     Take top k scoring candidates according to the scorer
     """
-    for candidate in sorted(nbest, key=scorer)[:k]:
+    for candidate in sorted(nbest, key=scorer, reverse=True)[:k]:
         yield candidate
+
 
 @extractor_wrap
 def top_k_fast(nbest, scorer, ks):
     """
     Take topk scoring candidates according to the scorer and ks
     """
-    for candidate, repetitions in zip(sorted(nbest, key=scorer), ks):
+    for candidate, repetitions in zip(sorted(nbest, key=scorer, reverse=True), ks):
         for _ in range(repetitions):
             yield candidate
+
 
 @extractor_wrap
 def atleast(nbest, scorer, threshold):

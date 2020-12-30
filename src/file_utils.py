@@ -3,6 +3,7 @@ from extractor import CandidateSent
 
 import os
 
+
 def loader(fsrc, fref, ftrans, spm_obj, prefix='data/'):
     """
     Effectively traverse both inferred file with n-best hypotheses and subword units and the reference
@@ -27,7 +28,6 @@ def loader(fsrc, fref, ftrans, spm_obj, prefix='data/'):
                         print(f' SRC line {(cur_i-1)//1000}k ...')
                     yield buffer
                     buffer = []
-
             buffer.append(CandidateSent(
                 cur_src.rstrip('\n'),
                 cur_ref.rstrip('\n'),
@@ -35,7 +35,6 @@ def loader(fsrc, fref, ftrans, spm_obj, prefix='data/'):
                 float(score),
                 spm_obj,
             ))
-
         if len(buffer) != 0:
             yield buffer
 
