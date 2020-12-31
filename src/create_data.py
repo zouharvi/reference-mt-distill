@@ -150,6 +150,10 @@ META_RECIPES = {
         (1, top_k(scorer=lambda x: x.score, k=12)),
         (1, top_k(scorer=lambda x: x.bleu(), k=2)),
     ]),
+    'c7': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.score, k=12)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=4)),
+    ]),
 }
 
 for lpairtrue, lpairorig in META_LANGS.items():
