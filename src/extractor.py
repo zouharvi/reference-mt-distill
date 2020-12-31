@@ -38,6 +38,19 @@ class CandidateSent():
         """
         return -abs(self.new_hyp.count('▁') - len(self.spm_obj.encode(self.cur_ref)))
 
+    def printable_signature(self):
+        """
+        Returns a tuple needed for printing
+        """
+        return (self.cur_src, self.new_hyp)
+
+class CandidateSentPrint():
+    """
+    Used only for printing after deduplication
+    """
+    def __init__(self, cur_src, new_hyp):
+        self.cur_src = cur_src
+        self.new_hyp = new_hyp
 
 def extractor_wrap(func):
     """
@@ -105,8 +118,25 @@ def aggregator(candidate_list, recipe):
     """
     Aggregates extractor list recipes [(repetition, extractor)] and yields the results
     """
+    i = 0
     for nbest in candidate_list:
+        i += 1
         for repetition, extractor in recipe:
             for _ in range(repetition):
                 for candidate in extractor(nbest):
                     yield candidate
+        if i == 2:
+            exit()
+
+@extractor_wrap
+def aggregator_deduplicate(nbest, recipe):
+    """
+    Deduplicates extractor list recipes [extractor] and yields the results
+    """
+    buffer = set()
+    for extractor in recipe:
+        for candidate in extractor(nbest):
+            buffer.add(candidate.printable_signature())
+    # yield candidates
+    for src, hyp in buffer:
+        yield CandidateSentPrint(src, hyp)

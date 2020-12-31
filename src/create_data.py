@@ -8,13 +8,15 @@ in larger pieces.
 
 
 import file_utils
-from extractor import top_k, top_k_fast, top_kth, atleast, original, aggregator
+from extractor import *
 import os
 import argparse
 
 parser = argparse.ArgumentParser(description='Create experiment datasets')
-parser.add_argument('-r','--recipes', nargs='+', help='Recipes', required=True)
-parser.add_argument('-l','--langs', nargs='+', help='Languages', required=True)
+parser.add_argument('-r', '--recipes', nargs='+',
+                    help='Recipes', required=True)
+parser.add_argument('-l', '--langs', nargs='+',
+                    help='Languages', required=True)
 args = parser.parse_args()
 args.recipes = set(args.recipes)
 
@@ -113,31 +115,32 @@ META_RECIPES = {
         (1, top_k_fast(scorer=lambda x: x.ter(), ks=[2, 2, 1, 1])),
     ]),
     'c1': aggregator(recipe=[
-        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[2, 2, 1, 1])),
-        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[1, 1, 1, 1])),
+        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[1, 1])),
+        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[1, 1])),
+        (1, top_k_fast(scorer=lambda x: x.chrf(), ks=[1, 1])),
+        (1, top_k_fast(scorer=lambda x: x.spm_diff(), ks=[1, 1])),
+        (1, top_k_fast(scorer=lambda x: x.score, ks=[1, 1])),
     ]),
     'c2': aggregator(recipe=[
-        (1, top_k(scorer=lambda x: x.score, k=12)),
-        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[2, 2, 1, 1])),
+        (1, aggregator_deduplicate(recipe=[
+            top_k_fast(scorer=lambda x: x.bleu(), ks=[1, 1]),
+            top_k_fast(scorer=lambda x: x.ter(), ks=[1, 1]),
+            top_k_fast(scorer=lambda x: x.chrf(), ks=[1, 1]),
+            top_k_fast(scorer=lambda x: x.spm_diff(), ks=[1, 1]),
+            top_k_fast(scorer=lambda x: x.score, ks=[1, 1]),
+        ]))
     ]),
     'c3': aggregator(recipe=[
         (1, top_k(scorer=lambda x: x.score, k=12)),
-        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[1, 1, 1, 1])),
-        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[1, 1])),
+        (1, aggregator_deduplicate(recipe=[
+            top_k_fast(scorer=lambda x: x.bleu(), ks=[1, 1]),
+            top_k_fast(scorer=lambda x: x.ter(), ks=[1, 1]),
+            top_k_fast(scorer=lambda x: x.chrf(), ks=[1, 1]),
+            top_k_fast(scorer=lambda x: x.spm_diff(), ks=[1, 1]),
+            top_k_fast(scorer=lambda x: x.score, ks=[1, 1]),
+        ]))
     ]),
     'c4': aggregator(recipe=[
-        (4, original()),
-        (1, top_k(scorer=lambda x: x.score, k=12)),
-        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[4, 3, 2, 1])),
-        (1, top_k_fast(scorer=lambda x: x.chrf(), ks=[4, 3, 2, 1])),
-        (1, top_k_fast(scorer=lambda x: x.spm_diff(), ks=[4, 3, 2, 1])),
-        (1, top_k_fast(scorer=lambda x: x.score, ks=[4, 3, 2, 1])),
-    ]),
-    'c3': aggregator(recipe=[
-        (1, original()),
-        (1, top_k(scorer=lambda x: x.score, k=12)),
-        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[1, 1, 1, 1])),
-        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[1, 1])),
     ]),
 }
 
