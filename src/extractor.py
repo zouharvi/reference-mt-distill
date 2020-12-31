@@ -118,15 +118,11 @@ def aggregator(candidate_list, recipe):
     """
     Aggregates extractor list recipes [(repetition, extractor)] and yields the results
     """
-    i = 0
     for nbest in candidate_list:
-        i += 1
         for repetition, extractor in recipe:
             for _ in range(repetition):
                 for candidate in extractor(nbest):
                     yield candidate
-        if i == 2:
-            exit()
 
 @extractor_wrap
 def aggregator_deduplicate(nbest, recipe):
