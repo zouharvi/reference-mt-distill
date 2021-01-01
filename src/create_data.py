@@ -136,6 +136,14 @@ META_RECIPES = {
         ]))
     ]),
     'c4': aggregator(recipe=[
+        (1, aggregator_deduplicate(recipe=[
+            top_k(scorer=lambda x: x.score, k=4),
+            top_k(scorer=lambda x: x.bleu(), k=4),
+        ])),
+        (1, aggregator_deduplicate(recipe=[
+            top_k(scorer=lambda x: x.score, k=1),
+            top_k(scorer=lambda x: x.bleu(), k=1),
+        ])),
     ]),
     'c5': aggregator(recipe=[
         (1, top_k(scorer=lambda x: x.score, k=12)),
