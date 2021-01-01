@@ -154,6 +154,16 @@ META_RECIPES = {
         (1, top_k(scorer=lambda x: x.score, k=12)),
         (1, top_k(scorer=lambda x: x.bleu(), k=4)),
     ]),
+    'c8': aggregator(recipe=[
+        (1, top_k(scorer=lambda x: x.score, k=4)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=4)),
+    ]),
+    'c9': aggregator(recipe=[
+        (1, aggregator_deduplicate(recipe=[
+            top_k(scorer=lambda x: x.score, k=4),
+            top_k(scorer=lambda x: x.bleu(), k=4),
+        ]))
+    ]),
 }
 
 for lpairtrue, lpairorig in META_LANGS.items():
