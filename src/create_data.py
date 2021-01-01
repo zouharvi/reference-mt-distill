@@ -115,11 +115,6 @@ META_RECIPES = {
         (1, top_k_fast(scorer=lambda x: x.ter(), ks=[2, 2, 1, 1])),
     ]),
     'c1': aggregator(recipe=[
-        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[1, 1])),
-        (1, top_k_fast(scorer=lambda x: x.ter(), ks=[1, 1])),
-        (1, top_k_fast(scorer=lambda x: x.chrf(), ks=[1, 1])),
-        (1, top_k_fast(scorer=lambda x: x.spm_diff(), ks=[1, 1])),
-        (1, top_k_fast(scorer=lambda x: x.score, ks=[1, 1])),
     ]),
     'c2': aggregator(recipe=[
         (1, aggregator_deduplicate(recipe=[
@@ -147,8 +142,12 @@ META_RECIPES = {
         (1, top_k(scorer=lambda x: x.score, k=4)),
     ]),
     'c6': aggregator(recipe=[
-        (1, top_k(scorer=lambda x: x.score, k=12)),
-        (1, top_k(scorer=lambda x: x.bleu(), k=2)),
+        (1, aggregator_deduplicate(recipe=[
+            top_k(scorer=lambda x: x.score, k=4),
+            top_k(scorer=lambda x: x.bleu(), k=4),
+        ])),
+        (1, top_k(scorer=lambda x: x.score, k=1)),
+        (1, top_k(scorer=lambda x: x.bleu(), k=1)),
     ]),
     'c7': aggregator(recipe=[
         (1, top_k(scorer=lambda x: x.score, k=12)),
