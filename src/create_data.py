@@ -8,7 +8,6 @@ in larger pieces.
 
 
 import file_utils
-from extractor import *
 from recipes import META_RECIPES
 import os
 import argparse

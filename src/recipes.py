@@ -1,3 +1,5 @@
+from extractor import *
+
 # every recipe is a tuple of number of repetitions and a generator
 # examples:
 # (1, original()),
