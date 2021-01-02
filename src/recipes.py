@@ -14,6 +14,10 @@ META_RECIPES = {
     'b3': aggregator(recipe=[
         (1, top_k(scorer=lambda x: x.score, k=12)),
     ]),
+    'b4': aggregator(recipe=[
+        (1, original()),
+        (1, top_k(scorer=lambda x: x.score, k=1)),
+    ]),
     'm1': aggregator(recipe=[
         (1, top_k(scorer=lambda x: x.bleu(), k=1)),
     ]),
