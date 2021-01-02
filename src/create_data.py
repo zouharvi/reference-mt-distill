@@ -115,6 +115,11 @@ META_RECIPES = {
         (1, top_k_fast(scorer=lambda x: x.ter(), ks=[2, 2, 1, 1])),
     ]),
     'c1': aggregator(recipe=[
+        (1, original()),
+        (1, aggregator_deduplicate(recipe=[
+            top_k(scorer=lambda x: x.score, k=4),
+            top_k(scorer=lambda x: x.bleu(), k=4),
+        ]))
     ]),
     'c2': aggregator(recipe=[
         (1, aggregator_deduplicate(recipe=[
