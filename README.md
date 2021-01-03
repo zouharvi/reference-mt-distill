@@ -1,6 +1,6 @@
-# Reference MT Steal
+# Reference MT Distillation
 
-Repository for the project _Almost Black-Box MT Model Stealing with Reference Translations Supersampling_
+Repository for the project _Neural Machine Translation Distillation Filtering and Sampling_
 
 
 ## Introduction 
