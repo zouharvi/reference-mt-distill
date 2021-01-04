@@ -5,7 +5,7 @@ Repository for the project _Sampling and Filtering of Neural Machine Translation
 
 ## Introduction 
 
-Model  distillation  is  the  task  of  training  a  new  model(student) in a way that its performance is similar to the one of the already trained one (teacher), by making use either of teacher predictions (black-box) or other products of theworking of the teacher, such as attention-score or decoderscore (grey/glass-box). Assuming that we have access to a parallel corpus, wefocus on sampling the translation queries and making use not only of the teacher scores but also of their comparison to the reference. There are several motivation factors for MT model distillation.  The student model can be much smaller than the teacher, which has the benefit of faster inference speed. It can also be used for model stealing, which is a practical concern for production MT systems.
+Model distillation is the task of training a new model (student) in a way that its performance is similar to the one of the already trained one (teacher), by making use either of teacher predictions (black-box) or other products of the workings of the teacher, such as attention-score or decoder score (grey/glass-box). Assuming that we have access to a parallel corpus, we focus on sampling the translation queries and making use not only of the teacher scores but also of their comparison to the reference. There are several motivation factors for MT model distillation.  The student model can be much smaller than the teacher, which has the benefit of faster inference speed. It can also be used for model stealing, which is a practical concern for production MT systems.
 
 ## Pre-processing 
 
@@ -66,7 +66,6 @@ The output files that are created contain the provided sentences, the scores and
 - M2: T(chrf, 1)
 - M3: T(sp, 1)
 - M5: T(TER, 1)
-
 - N1: T(bleu, 4)
 - N2: T(chrf, 4)
 - N3: T(sp, 4)
