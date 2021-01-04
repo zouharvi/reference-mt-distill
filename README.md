@@ -2,15 +2,16 @@
 
 Repository for the project _Sampling and Filtering of Neural Machine Translation Distillation Data_
 
+
 ## Introduction 
 
-<!-- Consider the following scenario. You want to train a machine learning model to translate between languages but you don't have enough bilingual data to train it accurate. We suggest a simple solution. The idea is quite simple. We use an already trained teacher model and query it on a big monolingual dataset. We than use our dataset and the output of the teacher to create our own bilingual dataset. We then can train our model based on the new data and get better results than training only on the small bilingual dataset we had before. For extraction we will use different strategies and compare them to get the best results. -->
+Model  distillation  is  the  task  of  training  a  new  model(student) in a way that its performance is similar to the one of the already trained one (teacher), by making use either of teacher predictions (black-box) or other products of theworking of the teacher, such as attention-score or decoderscore (grey/glass-box). Assuming that we have access to a parallel corpus, wefocus on sampling the translation queries and making use not only of the teacher scores but also of their comparison to the reference. There are several motivation factors for MT model distillation.  The student model can be much smaller than the teacher, which has the benefit of faster inference speed. It can also be used for model stealing, which is a practical concern for production MT systems.
 
 ## Pre-processing 
 
 ### Download data
 
-To get the dataset we used for training, evaluating and training our models, simply run the scripts provided in the **data/** directory. First use [_download_process.sh_](data/download_process.sh) to download, shuffle and create the datasets. We fokused on de-en, en-de, en-cs and cs-en translation. 
+To get the dataset we used for training, evaluating and training our models, simply run the scripts provided in the **reference-mt-steal/data/** directory. First use [_download_process.sh_](./data/download_process.sh) to download, shuffle and create the datasets. We fokused on de-en, en-de, en-cs and cs-en translation. 
 
 
 ### Create datasets
@@ -26,14 +27,11 @@ For development we also crop the created datasets. They then contain only 10 sen
 As our teacher models, we use pre-trained models from the [Machine Translation Group at the UEDIN](http://data.statmt.org/). The script [download.sh](models/download.sh) downloads 3 teacher models (en-de, cs-en, en-cs). For Inference we use the [MarianNMT](https://marian-nmt.github.io/) framework in the script [infer_teacher_all.sh](models/infer_teacher_all.sh). 
 
 #### Student models
+All of our student  models  share  the  same  configuration  and  follow  the teacher’s architecture with half the size the embedding vector (256 instead of 512) and half the attention heads (4 instead of 8). Student models were trained with an early stopping of 20 on validation data with evaluation every 10k sentences.
 
-`TODO`
+## Training
+`TODO: cluster_scripts/...`
 
----------------------------------
-`TODO: used model, extraction, training of students based on small and new datasets`
-
----------------------------------
-`TODO: eval.py - documentation`
 
 ## File Types 
 
@@ -48,8 +46,6 @@ The same holds for files in [data/experiment/](data/experiment/). But this time 
 #### Outputs
 
 The output files that are created contain the provided sentences, the scores and the best hypotheses. All information sepperated by \' ||| \'.  
-
-`TODO: add more files and their descriptions` 
 
 ## Experiment composition
 
