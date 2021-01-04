@@ -1,6 +1,6 @@
 # Reference MT Distillation
 
-Repository for the project _Sampling and Filtering for Neural Machine Translation Distillation Data_
+Repository for the project _Sampling and Filtering of Neural Machine Translation Distillation Data_
 
 
 ## Introduction 
