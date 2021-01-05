@@ -9,7 +9,7 @@ marian-decoder \
     -v "models/experiment/$EXP/encs/vocab.spm" "models/experiment/$EXP/encs/vocab.spm" \
     -i "data/original/test.cs-en.en" \
     -o "data/experiment/$EXP/test.cs-en.cs" \
-    --devices 0 1 2 3 \
+    --devices 0 \
     --quiet-translation \
 
 marian-decoder \
@@ -17,7 +17,7 @@ marian-decoder \
     -v "models/experiment/$EXP/csen/vocab.spm" "models/experiment/$EXP/csen/vocab.spm" \
     -i "data/original/test.cs-en.cs" \
     -o "data/experiment/$EXP/test.cs-en.en" \
-    --devices 0 1 2 3 \
+    --devices 0 \
     --quiet-translation \
     
 marian-decoder \
@@ -25,5 +25,5 @@ marian-decoder \
     -v "models/experiment/$EXP/ende/vocab.spm" "models/experiment/$EXP/ende/vocab.spm" \
     -i "data/original/test.de-en.en" \
     -o "data/experiment/$EXP/test.de-en.de" \
-    --devices 0 1 2 3 \
+    --devices 0 \
     --quiet-translation \
