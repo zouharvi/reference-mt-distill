@@ -29,9 +29,9 @@ As our teacher models, we use pre-trained models from the [Machine Translation G
 #### Student models
 All of our student  models  share  the  same  configuration  and  follow  the teacher’s architecture with half the size the embedding vector (256 instead of 512) and half the attention heads (4 instead of 8). Student models were trained with an early stopping of 20 on validation data with evaluation every 10k sentences.
 
-## Training
-`TODO: cluster_scripts/...`
-
+## Processing
+To infer the teacher we used [infer_teacher_test.sh](cluster_scripts/infer_teacher_test.sh), [infer_teacher_all.sh](cluster_scripts/infer_teacher_all.sh) and [infer_teacher_wmt.sh](cluster_scripts/infer_teacher_wmt.sh) each with different data and to infer the students, we used [infer_student_test](cluster_scripts/infer_student_test.sh). For training the student models we used [train_experiment.sh](cluster_scripts/train_experiment.sh).
+To clear all model data use [clear_models.sh](cluster_scripts/clear_models.sh).
 
 ## File Types 
 
@@ -95,14 +95,12 @@ The output files that are created contain the provided sentences, the scores and
 
 ### Combination
 
-`TODO: Philipp`
-
-- C1
-- C2
-- C3
-- C4
-- C5
-- C6
-- C7
-- C8
-- C9
+- C1: B1 + Dedup[ T(score, 4), T(blue, 4) ]
+- C2: Dedup[ F(blue, 1,1), F(ter, 1,1), F(chrf, 1,1), F(spm_diff, 1,1), F(score, 1,1) ]
+- C3: T(score, 12) + Dedup[ F(blue, 1,1), F(ter, 1,1), F(chrf, 1,1), F(spm_diff, 1,1), F(score, 1,1) ]
+- C4: Dedup[ T(score, 4), T(bleu, 4) ] + Dedup[ T(score, 1), T(bleu, 1) ]
+- C5: T(score, 12) + T(score, 4)
+- C6: Dedup[ T(score, 4), T(bleu, 4) ] + T(score, 1) + T(bleu, 1)
+- C7: T(score, 12) + T(bleu, 4)
+- C8: T(score, 4) + T(bleu, 4)
+- C9: Dedup[ T(score, 4), T(bleu, 4) ]
