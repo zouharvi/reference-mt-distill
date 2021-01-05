@@ -62,32 +62,32 @@ The output files that are created contain the provided sentences, the scores and
 - B4: T(score, 1) + original data
 
 ### Metrics
-- M1: T(bleu, 1)
+- M1: T(BLEU, 1)
 - M2: T(chrf, 1)
 - M3: T(sp, 1)
 - M5: T(TER, 1)
-- N1: T(bleu, 4)
+- N1: T(BLEU, 4)
 - N2: T(chrf, 4)
 - N3: T(sp, 4)
 - N4: T(score, 4)
 - N5: T(TER, 4)
 
 ### Guaranteed:
-- G1: G(bleu, 65/60/55)
+- G1: G(BLEU, 65/60/55)
 - G2: G(chrf, 0.9/0.85/0.8) 
 - G3: G(sp, -1/-2/-1) 
 - G4: G(score, -0.08/-0.09/-0.10) 
 - G5: G(TER, -0.20/-0.22/-0.24) 
 
 ### Oversampling S:
-- S1: F(bleu, 4,3,2,1)
+- S1: F(BLEU, 4,3,2,1)
 - S2: F(score, 4,3,2,1)
 - S3: F(chrf, 4,3,2,1)
 - S4: F(score, 4,3,2,1)
 - S5: F(TER, 4,3,2,1)
 
 ### Oversampling O:
-- O1: F(bleu, 2,2,1,1)
+- O1: F(BLEU, 2,2,1,1)
 - O2: F(score, 2,2,1,1)
 - O3: F(chrf, 2,2,1,1)
 - O4: F(score, 2,2,1,1)
@@ -95,12 +95,12 @@ The output files that are created contain the provided sentences, the scores and
 
 ### Combination
 
-- C1: B1 + Dedup[ T(score, 4), T(blue, 4) ]
-- C2: Dedup[ F(blue, 1,1), F(ter, 1,1), F(chrf, 1,1), F(spm_diff, 1,1), F(score, 1,1) ]
-- C3: T(score, 12) + Dedup[ F(blue, 1,1), F(ter, 1,1), F(chrf, 1,1), F(spm_diff, 1,1), F(score, 1,1) ]
-- C4: Dedup[ T(score, 4), T(bleu, 4) ] + Dedup[ T(score, 1), T(bleu, 1) ]
+- C1: Original + Dedup[ T(score, 4), T(BLEU, 4) ]
+- C2: Dedup[ T(BLEU, 2), T(ter, 2), T(chrf, 2), T(spm_diff, 2), T(score, 2) ]
+- C3: T(score, 12) + Dedup[ T(BLEU, 2), T(ter, 2), T(chrf, 2), T(spm_diff, 2), T(score, 2) ]
+- C4: Dedup[ T(score, 4), T(BLEU, 4) ] + Dedup[ T(score, 1), T(BLEU, 1) ]
 - C5: T(score, 12) + T(score, 4)
-- C6: Dedup[ T(score, 4), T(bleu, 4) ] + T(score, 1) + T(bleu, 1)
-- C7: T(score, 12) + T(bleu, 4)
-- C8: T(score, 4) + T(bleu, 4)
-- C9: Dedup[ T(score, 4), T(bleu, 4) ]
+- C6: Dedup[ T(score, 4), T(BLEU, 4) ] + T(score, 1) + T(BLEU, 1)
+- C7: T(score, 12) + T(BLEU, 4)
+- C8: T(score, 4) + T(BLEU, 4)
+- C9: Dedup[ T(score, 4), T(BLEU, 4) ]
