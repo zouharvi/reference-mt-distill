@@ -10,9 +10,9 @@ models/**/*.yml
 # corpora
 *.tsv.gz
 data/**/*.tsv
-data/**/*.cs
-data/**/*.en
-data/**/*.de
+*.cs
+*.en
+*.de
 
 # misc.
 .vscode
