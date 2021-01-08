@@ -154,4 +154,16 @@ META_RECIPES = {
             top_k(scorer=lambda x: x.bleu(), k=4),
         ]))
     ]),
+    'x1': aggregator(recipe=[
+        (2, original()),
+        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[4, 3, 2, 1])),
+    ]),
+    'x2': aggregator(recipe=[
+        (4, original()),
+        (1, top_k_fast(scorer=lambda x: x.bleu(), ks=[4, 3, 2, 1])),
+    ]),
+    'y1': aggregator(recipe=[
+        (2, original()),
+        (1, top_k_fast(scorer=lambda x: x.score, ks=[4, 3, 2, 1])),
+    ]),
 }

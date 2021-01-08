@@ -16,9 +16,9 @@ function getmodel {
 }
 
 mkdir -p "data/student_test/$EXP"
-rm "data/student_test/$EXP/test.cs-en.cs"
-rm "data/student_test/$EXP/test.cs-en.en"
-rm "data/student_test/$EXP/test.de-en.de"
+rm -f "data/student_test/$EXP/test.cs-en.cs"
+rm -f "data/student_test/$EXP/test.cs-en.en"
+rm -f "data/student_test/$EXP/test.de-en.de"
 
 MODEL_PREFIX=$(getmodel "encs" $EXP)
 marian-decoder \
