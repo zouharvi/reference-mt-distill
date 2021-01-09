@@ -1,0 +1,179 @@
+b1 csen 41.6
+b1 encs 31.8
+b1 ende 25.1
+
+b2 csen 40.0
+b2 encs 31.2
+b2 ende 28.5
+
+b3 csen 41.1
+b3 encs 31.6
+b3 ende 28.4
+
+b4 csen 44.4
+b4 encs 36.4
+b4 ende 28.3
+
+m1 csen 42.6
+m1 encs 34.4
+m1 ende 29.5
+
+m2 csen 43.8
+m2 encs 33.9
+m2 ende 30.5
+
+m3 csen 39.9
+m3 encs 29.5
+m3 ende 28.2
+
+m5 csen 43.0
+m5 encs 36.1
+m5 ende 28.5
+
+n1 csen 44.0
+n1 encs 33.3
+n1 ende 29.3
+
+n2 csen 44.3
+n2 encs 34.9
+n2 ende 29.6
+
+n3 csen 41.8
+n3 encs 32.3
+n3 ende 27.9
+
+n4 csen 41.0
+n4 encs 33.4
+n4 ende 27.7
+
+n5 csen 44.2
+n5 encs 32.0
+n5 ende 28.8
+
+g1 csen 39.0
+g1 encs 30.2
+g1 ende 27.2
+
+g2 csen 37.4
+g2 encs 29.2
+g2 ende 26.5
+
+g3 csen 32.5
+g3 encs 19.6
+g3 ende 23.0
+
+g4 csen 39.0
+g4 encs 32.0
+g4 ende 27.6
+
+g5 csen 37.8
+g5 encs 30.2
+g5 ende 25.2
+
+s1 csen 45.2
+s1 encs 37.1
+s1 ende 29.7
+
+s2 csen 42.9
+s2 encs 36.6
+s2 ende 30.1
+
+s3 csen 41.8
+s3 encs 30.7
+s3 ende 28.5
+
+s4 csen 41.4
+s4 encs 33.7
+s4 ende 27.9
+
+s5 csen 44.4
+s5 encs 36.9
+s5 ende 29.8
+
+o1 csen 44.3
+o1 encs 36.5
+o1 ende 29.6
+
+o2 csen 45.2
+o2 encs 36.1
+o2 ende 29.8
+
+o3 csen 41.8
+o3 encs 33.3
+o3 ende 28.9
+
+o4 csen 42.1
+o4 encs 33.7
+o4 ende 28.8
+
+o5 csen 43.5
+o5 encs 33.4
+o5 ende 29.6
+
+c1 csen 43.7
+c1 encs 35.3
+c1 ende 29.1
+
+c2 csen 43.6
+c2 encs 34.7
+c2 ende 29.1
+
+c3 csen 40.8
+c3 encs 32.0
+c3 ende 27.2
+
+c4 csen 42.6
+c4 encs 34.9
+c4 ende 29.6
+
+c5 csen 41.6
+c5 encs 33.2
+c5 ende 28.3
+
+c6 csen 43.5
+c6 encs 34.7
+c6 ende 29.2
+
+c7 csen 42.6
+c7 encs 33.9
+c7 ende 28.7
+
+c8 csen 43.3
+c8 encs 33.2
+c8 ende 28.9
+
+c9 csen 43.5
+c9 encs 35.0
+c9 ende 29.3
+
+v8 csen 43.2
+v8 encs 35.0
+v8 ende 27.1
+
+c1big csen 44.3
+c1big encs 36.2
+c1big ende 28.5
+
+b4big csen 44.7
+b4big encs 36.2
+b4big ende 28.3
+
+x1 csen 45.5
+x1 encs 37.3
+x1 ende 28.8
+
+x1big csen 46.9
+x1big encs 38.5
+x1big ende 28.8
+
+x2 csen 45.5
+x2 encs 37.4
+x2 ende 28.9
+
+x2big csen 47.4
+x2big encs 38.9
+x2big ende 28.9
+
+y1 csen 43.9
+y1 encs 36.1
+y1 ende 28.3
