@@ -11,14 +11,13 @@ Model distillation is the task of training a new model (student) in a way that i
 
 ### Download data
 
-To get the dataset we used for training, evaluating and training our models, simply run the scripts provided in the **reference-mt-steal/data/** directory. First use [_download_process.sh_](./data/download_process.sh) to download, shuffle and create the datasets. We fokused on de-en, en-de, en-cs and cs-en translation. 
+To get the dataset we used for training, evaluating and training our models, simply run the scripts provided in the **reference-mt-steal/data/** directory. First use [_download_process.sh_](./data/download_process.sh) to download, shuffle and create the datasets. We focused on de-en, en-de, en-cs and cs-en translation. 
 
 
 ### Create datasets
 With [create_data.py](src/create_data.py) we are able to create new training, evaluation and test datasets for all language directions (de-en, en-de, cs-en, en-cs). The created datasets are then stored in [data/original](data/original/). The files then look like _train.cs-en.cs_ or _test.de-en.en_. For a description of those files read [this](#datasets).
 
-### Crop dataset for development
-For development we also crop the created datasets. They then contain only 10 sentences which makes it viable to test the implementation on a CPU. For that run the [crop.sh](data/crop.sh) script also provided in the same directory.
+For development, it is possible to crop the created datasets. They then contain only 10 sentences which makes it viable to test the implementation on a CPU. For that run the [crop.sh](data/crop.sh) script also provided in the same directory.
 
 
 ## Model
@@ -27,11 +26,11 @@ For development we also crop the created datasets. They then contain only 10 sen
 As our teacher models, we use pre-trained models from the [Machine Translation Group at the UEDIN](http://data.statmt.org/). The script [download.sh](models/download.sh) downloads 3 teacher models (en-de, cs-en, en-cs). For Inference we use the [MarianNMT](https://marian-nmt.github.io/) framework in the script [infer_teacher_all.sh](models/infer_teacher_all.sh). 
 
 #### Student models
-Most our student  models  share  the  same  configuration  and  follow  the teacher’s architecture with half the size the embedding vector (256 instead of 512) and half the attention heads (4 instead of 8). Student models were trained with an early stopping of 20 on validation data with evaluation every 10k sentences.
+Most of our student models share the same configuration and follow the teacher’s architecture with half the size the embedding vector (256 instead of 512) and half the attention heads (4 instead of 8). Student models were trained with an early stopping of 20 on validation data with evaluation every 10k sentences.
 
 ## Processing Pipeline
 
-For monitoring active jobs, use `qstat3`. For validation training use `bleu2`.
+For monitoring active jobs, use `qstat3`. For validation training, use `bleu2`.
 
 An example data creation, training and evaluation for `x1` for `csen encs ende`.
 
@@ -44,17 +43,17 @@ To clear all model data in the current cluster instance use `./cluster_scripts/c
 
 ## File Types 
 
-Here is a brief explonation of the files that are created during execution.
+A brief explanation of the files that are created during execution.
 
 #### Datasets <a name="datasets"></a>
 
-These files are the paralel corpus. E.g. take _train.cs-en.en_ and _train.cs-en.cs_ from [data/original](data/original/). Both contain sentences in either english for the .en file or in czech for the .cs file. So line _x_ of file _a_ is the translation of line _x_ in file _b_ and vica versa. This also holds for _eval_ and _test_ files.
+These files are the paralel corpus. E.g. take _train.cs-en.en_ and _train.cs-en.cs_ from [data/original](data/original/). Both contain sentences in either English for the .en file or in Czech for the .cs file.
 
-The same holds for files in [data/experiment/](data/experiment/). But this time the datasets are the ones that have been extracted from the teacher model.
+The same holds for files in [data/experiment/](data/experiment/). But this time, the datasets are the ones that have been extracted from the teacher model.
 
 #### Outputs
 
-The output files that are created contain the provided sentences, the scores and the best hypotheses. All information sepperated by \' ||| \'.  
+The output files that are created contain the provided sentences, the scores and the best hypotheses. All information separated by ` ||| `.  
 
 ## Experiment composition
 
@@ -113,6 +112,8 @@ The output files that are created contain the provided sentences, the scores and
 - C7: T(score, 12) + T(BLEU, 4)
 - C8: T(score, 4) + T(BLEU, 4)
 - C9: Dedup[ T(score, 4), T(BLEU, 4) ]
+
+### Combination Extra
 - Y1: F(score, (4,3,2,1)) + 2\*Original
 - X1: F(BLEU, (4,3,2,1)) + 2\*Original
 - X2: F(BLEU, (4,3,2,1)) + 4\*Original
