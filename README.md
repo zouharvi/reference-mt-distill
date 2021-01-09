@@ -27,11 +27,20 @@ For development we also crop the created datasets. They then contain only 10 sen
 As our teacher models, we use pre-trained models from the [Machine Translation Group at the UEDIN](http://data.statmt.org/). The script [download.sh](models/download.sh) downloads 3 teacher models (en-de, cs-en, en-cs). For Inference we use the [MarianNMT](https://marian-nmt.github.io/) framework in the script [infer_teacher_all.sh](models/infer_teacher_all.sh). 
 
 #### Student models
-All of our student  models  share  the  same  configuration  and  follow  the teacher’s architecture with half the size the embedding vector (256 instead of 512) and half the attention heads (4 instead of 8). Student models were trained with an early stopping of 20 on validation data with evaluation every 10k sentences.
+Most our student  models  share  the  same  configuration  and  follow  the teacher’s architecture with half the size the embedding vector (256 instead of 512) and half the attention heads (4 instead of 8). Student models were trained with an early stopping of 20 on validation data with evaluation every 10k sentences.
 
-## Processing
-To infer the teacher we used [infer_teacher_test.sh](cluster_scripts/infer_teacher_test.sh), [infer_teacher_all.sh](cluster_scripts/infer_teacher_all.sh) and [infer_teacher_wmt.sh](cluster_scripts/infer_teacher_wmt.sh) each with different data and to infer the students, we used [infer_student_test](cluster_scripts/infer_student_test.sh). For training the student models we used [train_experiment.sh](cluster_scripts/train_experiment.sh).
-To clear all model data use [clear_models.sh](cluster_scripts/clear_models.sh).
+## Processing Pipeline
+
+For monitoring active jobs, use `qstat3`. For validation training use `bleu2`.
+
+An example data creation, training and evaluation for `x1` for `csen encs ende`.
+
+1. Submit data creation `./cluster_scripts/submit_create_data.sh "x1" "csen encs ende"`
+2. Submit trainig `./cluster_scripts/submit_experiment.sh "x1"`
+3. Submit infer test data `./cluster_scripts/submit_infer_student.sh "x1"`
+4. Evalate test data with BLEU `./cluster_scripts/eval_student_test.sh "x1"`
+
+To clear all model data in the current cluster instance use `./cluster_scripts/clear_models.sh`. For test inference on the teacher models use `./cluster_scripts/infer_teacher_{test,wmt,all}.sh`.
 
 ## File Types 
 
@@ -104,3 +113,8 @@ The output files that are created contain the provided sentences, the scores and
 - C7: T(score, 12) + T(BLEU, 4)
 - C8: T(score, 4) + T(BLEU, 4)
 - C9: Dedup[ T(score, 4), T(BLEU, 4) ]
+- Y1: F(score, (4,3,2,1)) + 2\*Original
+- X1: F(BLEU, (4,3,2,1)) + 2\*Original
+- X2: F(BLEU, (4,3,2,1)) + 4\*Original
+- X1: F(BLEU, (4,3,2,1)) + 2\*Original (teacher-sized model)
+- X2: F(BLEU, (4,3,2,1)) + 4\*Original (teacher-sized model) 
