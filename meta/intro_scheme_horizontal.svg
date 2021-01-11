@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="260.82339mm"
+   height="128.65721mm"
+   viewBox="0 0 260.8234 128.65721"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="intro_scheme_horizontal.svg">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker1445"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1443" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1435"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1433" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1425"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1423" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1345"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1343" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1335"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1333" />
+    </marker>
+    <rect
+       x="64.790054"
+       y="155.21037"
+       width="49.342121"
+       height="36.086704"
+       id="rect1265" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="534.64157"
+     inkscape:cy="426.20479"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1050"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(8.7181892e-6,-3.7041581)">
+    <g
+       id="g990"
+       transform="translate(30.718299,-4.0995229)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.56161;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect833"
+         width="54.438389"
+         height="12.736998"
+         x="5.5458417"
+         y="8.084486" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="15.931646"
+         y="17.796007"
+         id="text837"><tspan
+           sodipodi:role="line"
+           id="tspan835"
+           x="15.931646"
+           y="17.796007"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Source </tspan></text>
+    </g>
+    <g
+       id="g995"
+       transform="rotate(-90,93.100031,100.84204)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.609759;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect833-1"
+         width="64.390244"
+         height="12.694074"
+         x="100.4136"
+         y="8.0468798" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="105.03419"
+         y="17.736771"
+         id="text837-2"><tspan
+           sodipodi:role="line"
+           id="tspan835-0"
+           x="105.03419"
+           y="17.736771"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Translation 1</tspan></text>
+    </g>
+    <g
+       id="g1000"
+       transform="rotate(-90,96.698311,97.371362)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.609759;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect833-1-7"
+         width="64.390244"
+         height="12.694074"
+         x="100.54119"
+         y="26.215408" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="105.16177"
+         y="35.9053"
+         id="text837-2-4"><tspan
+           sodipodi:role="line"
+           id="tspan835-0-8"
+           x="105.16177"
+           y="35.9053"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Translation 2</tspan></text>
+    </g>
+    <g
+       id="g1005"
+       transform="rotate(-90,124.86136,68.971906)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.609758;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect833-1-7-5"
+         width="64.390244"
+         height="12.694074"
+         x="100.30488"
+         y="59.231998" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="102.8088"
+         y="68.92189"
+         id="text837-2-4-8"><tspan
+           sodipodi:role="line"
+           id="tspan835-0-8-2"
+           x="102.8088"
+           y="68.92189"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Translation 12</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="58.375225"
+       y="62.139843"
+       id="text968"><tspan
+         sodipodi:role="line"
+         id="tspan966"
+         x="58.375225"
+         y="62.139843"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">...</tspan></text>
+    <g
+       id="g985"
+       transform="translate(31.18747,92.827752)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.561618;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect833-4"
+         width="54.438381"
+         height="12.737381"
+         x="5.2808089"
+         y="26.515434" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="10.374947"
+         y="36.226952"
+         id="text837-0"><tspan
+           sodipodi:role="line"
+           id="tspan835-6"
+           x="10.374947"
+           y="36.226952"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Reference </tspan></text>
+    </g>
+    <g
+       id="g1121"
+       transform="rotate(-90,111.89679,81.936491)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.609758;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1115"
+         width="64.390244"
+         height="12.694074"
+         x="100.30488"
+         y="59.231998" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="102.8088"
+         y="68.92189"
+         id="text1119"><tspan
+           sodipodi:role="line"
+           id="tspan1117"
+           x="102.8088"
+           y="68.92189"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Translation 11</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:7.76111px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="138.93248"
+       y="22.270557"
+       id="text1143"><tspan
+         sodipodi:role="line"
+         id="tspan1141"
+         x="138.93248"
+         y="22.270557"
+         style="font-size:7.76111px;stroke-width:0.264583">New data:</tspan></text>
+    <g
+       id="g1000-1"
+       transform="matrix(0.94688601,0,0,0.94688601,104.08059,16.867015)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.609759;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect833-1-7-0"
+         width="64.390244"
+         height="12.694074"
+         x="100.54119"
+         y="26.215408" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="105.16177"
+         y="35.9053"
+         id="text837-2-4-1"><tspan
+           sodipodi:role="line"
+           id="tspan835-0-8-3"
+           x="105.16177"
+           y="35.9053"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Translation 2</tspan></text>
+    </g>
+    <g
+       id="g995-7"
+       transform="matrix(0.94688601,0,0,0.94688601,104.48424,18.640535)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.609759;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect833-1-72"
+         width="64.390244"
+         height="12.694074"
+         x="100.4136"
+         y="8.0468798" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="105.03419"
+         y="17.736771"
+         id="text837-2-6"><tspan
+           sodipodi:role="line"
+           id="tspan835-0-4"
+           x="105.03419"
+           y="17.736771"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Translation 1</tspan></text>
+    </g>
+    <g
+       id="g1223"
+       transform="matrix(0.94688601,0,0,0.94688601,104.08059,31.898855)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.609759;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1217"
+         width="64.390244"
+         height="12.694074"
+         x="100.54119"
+         y="26.215408" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="105.16177"
+         y="35.9053"
+         id="text1221"><tspan
+           sodipodi:role="line"
+           id="tspan1219"
+           x="105.16177"
+           y="35.9053"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Translation 2</tspan></text>
+    </g>
+    <g
+       id="g1231"
+       transform="matrix(0.94688601,0,0,0.94688601,104.08059,46.429615)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.609759;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1225"
+         width="64.390244"
+         height="12.694074"
+         x="100.54119"
+         y="26.215408" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="105.16177"
+         y="35.9053"
+         id="text1229"><tspan
+           sodipodi:role="line"
+           id="tspan1227"
+           x="105.16177"
+           y="35.9053"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Translation 2</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.0212px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.250531"
+       x="224.25026"
+       y="87.808708"
+       id="text968-9"><tspan
+         sodipodi:role="line"
+         id="tspan966-0"
+         x="224.25026"
+         y="87.808708"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.250531">...</tspan></text>
+    <g
+       id="g1257"
+       transform="matrix(0.94688601,0,0,0.94688601,104.21445,35.457415)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.609758;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1251"
+         width="64.390244"
+         height="12.694074"
+         x="100.30488"
+         y="59.231998" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="102.8088"
+         y="68.92189"
+         id="text1255"><tspan
+           sodipodi:role="line"
+           id="tspan1253"
+           x="102.8088"
+           y="68.92189"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Translation 11</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:5.29167px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="70.813255"
+       y="166.64867"
+       id="text1261"><tspan
+         sodipodi:role="line"
+         id="tspan1259"
+         x="70.813255"
+         y="166.64867"
+         style="font-size:5.29167px;stroke-width:0.264583" /></text>
+    <g
+       id="g990-9"
+       transform="matrix(0.94688601,0,0,0.94688601,132.46214,18.582155)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.56161;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect833-9"
+         width="54.438389"
+         height="12.736998"
+         x="5.5458417"
+         y="8.084486" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="15.931646"
+         y="17.796007"
+         id="text837-4"><tspan
+           sodipodi:role="line"
+           id="tspan835-5"
+           x="15.931646"
+           y="17.796007"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Source </tspan></text>
+    </g>
+    <g
+       id="g1034"
+       transform="matrix(1.0001643,0,0,0.87891468,-0.01054847,11.303015)"
+       style="stroke-width:0.626789;stroke-miterlimit:4;stroke-dasharray:none">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.626789;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 5.8577108,93.555605 62.32129,122.58427"
+         id="path1023" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.626789;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 62.322982,122.58596 31.258888,93.676674"
+         id="path1027"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.626789;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 95.042777,93.667199 62.319499,122.58598 122.51051,93.848668"
+         id="path1029"
+         sodipodi:nodetypes="ccc" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 5.5473345,28.815944 62.030332,16.60998"
+       id="path1023-6" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 62.032024,16.609269 31.559105,29.06112"
+       id="path1027-7"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 95.849763,29.212408 62.02854,16.609261 122.24025,28.692717"
+       id="path1029-5"
+       sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.70278px;line-height:0.85;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="49.645874"
+       y="99.293419"
+       id="text1544"><tspan
+         sodipodi:role="line"
+         x="49.645874"
+         y="99.293419"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.70278px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan1546">BLEU</tspan><tspan
+         sodipodi:role="line"
+         x="49.645874"
+         y="105.07881"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.70278px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan1550">55</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.70278px;line-height:0.85;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="22.408958"
+       y="110.70897"
+       id="text1544-3"><tspan
+         sodipodi:role="line"
+         x="22.408958"
+         y="110.70897"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.70278px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan1546-5">BLEU</tspan><tspan
+         sodipodi:role="line"
+         x="22.408958"
+         y="116.49436"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.70278px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan1550-6">37</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.70278px;line-height:0.85;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="76.104202"
+       y="99.293419"
+       id="text1601"><tspan
+         sodipodi:role="line"
+         x="76.104202"
+         y="99.293419"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.70278px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan1597">BLEU</tspan><tspan
+         sodipodi:role="line"
+         x="76.104202"
+         y="105.07881"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.70278px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan1599">35</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.70278px;line-height:0.85;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="103.37144"
+       y="110.70898"
+       id="text1607"><tspan
+         sodipodi:role="line"
+         x="103.37144"
+         y="110.70898"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.70278px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan1603">BLEU</tspan><tspan
+         sodipodi:role="line"
+         x="103.37144"
+         y="116.49437"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.70278px;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan1605">16</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.539562;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 189.32114,32.290625 h 10.22635"
+       id="path1609" />
+    <g
+       id="g1617"
+       transform="matrix(0.94688601,0,0,0.94688601,132.46214,34.012545)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.56161;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1611"
+         width="54.438389"
+         height="12.736998"
+         x="5.5458417"
+         y="8.084486" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="15.931646"
+         y="17.796007"
+         id="text1615"><tspan
+           sodipodi:role="line"
+           id="tspan1613"
+           x="15.931646"
+           y="17.796007"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Source </tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.539562;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 189.32114,47.721015 h 10.22635"
+       id="path1619" />
+    <g
+       id="g1627"
+       transform="matrix(0.94688601,0,0,0.94688601,132.46214,49.043645)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.56161;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1621"
+         width="54.438389"
+         height="12.736998"
+         x="5.5458417"
+         y="8.084486" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="15.931646"
+         y="17.796007"
+         id="text1625"><tspan
+           sodipodi:role="line"
+           id="tspan1623"
+           x="15.931646"
+           y="17.796007"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Source </tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.539562;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 189.32114,62.555525 h 10.22635"
+       id="path1629" />
+    <g
+       id="g1637"
+       transform="matrix(0.94688601,0,0,0.94688601,132.46214,63.575115)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.56161;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1631"
+         width="54.438389"
+         height="12.736998"
+         x="5.5458417"
+         y="8.084486" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="15.931646"
+         y="17.796007"
+         id="text1635"><tspan
+           sodipodi:role="line"
+           id="tspan1633"
+           x="15.931646"
+           y="17.796007"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Source </tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.539562;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 189.32114,77.402455 h 10.22635"
+       id="path1639" />
+    <g
+       id="g1647"
+       transform="matrix(0.94688601,0,0,0.94688601,132.46214,83.865875)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.56161;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1641"
+         width="54.438389"
+         height="12.736998"
+         x="5.5458417"
+         y="8.084486" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="15.931646"
+         y="17.796007"
+         id="text1645"><tspan
+           sodipodi:role="line"
+           id="tspan1643"
+           x="15.931646"
+           y="17.796007"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif';stroke-width:0.264583">Source </tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.539562;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 189.32114,97.959755 h 10.22635"
+       id="path1649" />
+  </g>
+</svg>
