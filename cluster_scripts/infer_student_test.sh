@@ -25,8 +25,8 @@ marian-decoder \
     -m "$MODEL_PREFIX/model.bin.best-bleu.bin" \
     -v "$MODEL_PREFIX/vocab.spm" "$MODEL_PREFIX/vocab.spm" \
     -c "$MODEL_PREFIX/model.bin.best-bleu.bin.decoder.yml" \
-    -i "data/original/test.cs-en.en" \
-    -o "data/student_test/$EXP/test.cs-en.cs" \
+    -i "~/.sacrebleu/wmt20/cs-en.en" \
+    -o "data/student_test/$EXP/wmt.cs-en.cs" \
     --devices 0 \
     --quiet-translation \
 
@@ -35,8 +35,8 @@ marian-decoder \
     -m "$MODEL_PREFIX/model.bin.best-bleu.bin" \
     -v "$MODEL_PREFIX/vocab.spm" "$MODEL_PREFIX/vocab.spm" \
     -c "$MODEL_PREFIX/model.bin.best-bleu.bin.decoder.yml" \
-    -i "data/original/test.cs-en.cs" \
-    -o "data/student_test/$EXP/test.cs-en.en" \
+    -i "~/.sacrebleu/wmt20/cs-en.cs" \
+    -o "data/student_test/$EXP/wmt.cs-en.en" \
     --devices 0 \
     --quiet-translation \
 
@@ -45,7 +45,7 @@ marian-decoder \
     -m "$MODEL_PREFIX/model.bin.best-bleu.bin" \
     -v "$MODEL_PREFIX/vocab.spm" "$MODEL_PREFIX/vocab.spm" \
     -c "$MODEL_PREFIX/model.bin.best-bleu.bin.decoder.yml" \
-    -i "data/original/test.de-en.en" \
-    -o "data/student_test/$EXP/test.de-en.de" \
+    -i "~/.sacrebleu/wmt20/de-en.en" \
+    -o "data/student_test/$EXP/wmt.de-en.de" \
     --devices 0 \
     --quiet-translation \
