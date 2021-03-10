@@ -13,6 +13,9 @@ data/**/*.tsv
 *.cs
 *.en
 *.de
+*.cs.head
+*.en.head
+*.de.head
 
 # misc.
 .vscode
