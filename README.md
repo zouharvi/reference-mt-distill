@@ -1,6 +1,17 @@
 # Reference MT Distillation
 
-Repository for the project _Sampling and Filtering of Neural Machine Translation Distillation Data_
+Repository for the project [Sampling and Filtering of Neural Machine Translation Distillation Data](https://arxiv.org/abs/2104.00664). Cite as:
+
+```
+@misc{zouhar2021sampling,
+      title={Sampling and Filtering of Neural Machine Translation Distillation Data}, 
+      author={Vilém Zouhar},
+      year={2021},
+      eprint={2104.00664},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
 
 
 ## Introduction 
