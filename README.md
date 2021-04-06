@@ -1,6 +1,12 @@
 # Reference MT Distillation
 
-Repository for the project [Sampling and Filtering of Neural Machine Translation Distillation Data](https://arxiv.org/abs/2104.00664). To be presented at NAACL-SRW. Cite as:
+Repository for the project [Sampling and Filtering of Neural Machine Translation Distillation Data](https://arxiv.org/abs/2104.00664). To be presented at NAACL-SRW.
+
+_In most of neural machine translation distillation or stealing scenarios, the goal is to preserve the performance of the target model (teacher). The highest-scoring hypothesis of the teacher model is commonly used to train a new model (student). If reference translations are also available, then better hypotheses (with respect to the references) can be upsampled and poor hypotheses either removed or undersampled._
+
+_This paper explores the importance sampling method landscape (pruning, hypothesis upsampling and undersampling, deduplication and their combination) with English to Czech and English to German MT models using standard MT evaluation metrics. We show that careful upsampling and combination with the original data leads to better performance when compared to training only on the original or synthesized data or their direct combination._
+
+Cite as:
 
 ```
 @misc{zouhar2021sampling,
@@ -13,10 +19,9 @@ Repository for the project [Sampling and Filtering of Neural Machine Translation
 }
 ```
 
-
 ## Introduction 
 
-Model distillation is the task of training a new model (student) in a way that its performance is similar to the one of the already trained one (teacher), by making use either of teacher predictions (black-box) or other products of the workings of the teacher, such as attention-score or decoder score (grey/glass-box). Assuming that we have access to a parallel corpus, we focus on sampling the translation queries and making use not only of the teacher scores but also of their comparison to the reference. There are several motivation factors for MT model distillation.  The student model can be much smaller than the teacher, which has the benefit of faster inference speed. It can also be used for model stealing, which is a practical concern for production MT systems.
+Model distillation is the task of training a new model (student) in a way that its performance is similar to the one of the already trained one (teacher), by making use either of teacher predictions (black-box) or other products of the workings of the teacher, such as attention-score or decoder score (grey/glass-box). Assuming that we have access to a parallel corpus, we focus on sampling the translation queries and making use not only of the teacher scores but also of their comparison to the reference. There are several motivation factors for MT model distillation. The student model can be much smaller than the teacher, which has the benefit of faster inference speed. It can also be used for model stealing, which is a practical concern for production MT systems.
 
 ## Pre-processing 
 
