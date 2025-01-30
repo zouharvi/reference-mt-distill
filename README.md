@@ -2,8 +2,6 @@
 
 
 [![Paper](https://img.shields.io/badge/📜%20paper-481.svg)](https://aclanthology.org/2021.naacl-srw.1.pdf)
-&nbsp;
-[![YouTube video](https://img.shields.io/badge/🎥%20YouTube%20video-F00.svg)](https://www.youtube.com/watch?v=feMWDVylhac)
 
 Repository for the project [Sampling and Filtering of Neural Machine Translation Distillation Data](https://aclanthology.org/2021.naacl-srw.1.pdf), which was presented at NAACL Student Research Workshop.
 
