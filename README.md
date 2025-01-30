@@ -3,7 +3,7 @@
 
 [![Paper](https://img.shields.io/badge/📜%20paper-481.svg)](https://aclanthology.org/2021.naacl-srw.1.pdf)
 
-Repository for the project [Sampling and Filtering of Neural Machine Translation Distillation Data](https://aclanthology.org/2021.naacl-srw.1.pdf), which was presented at NAACL Student Research Workshop.
+Repository for the project [Sampling and Filtering of Neural Machine Translation Distillation Data](https://aclanthology.org/2021.naacl-srw.1.pdf), which was presented at NAACL 2021 Student Research Workshop.
 
 > In most of neural machine translation distillation or stealing scenarios, the goal is to preserve the performance of the target model (teacher). The highest-scoring hypothesis of the teacher model is commonly used to train a new model (student). If reference translations are also available, then better hypotheses (with respect to the references) can be upsampled and poor hypotheses either removed or undersampled.
 > 
