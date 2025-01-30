@@ -1,6 +1,11 @@
 # Reference MT Distillation
 
-Repository for the project [Sampling and Filtering of Neural Machine Translation Distillation Data](https://arxiv.org/abs/2104.00664). To be presented at NAACL-SRW.
+
+[![Paper](https://img.shields.io/badge/📜%20paper-481.svg)](https://aclanthology.org/2021.naacl-srw.1.pdf)
+&nbsp;
+[![YouTube video](https://img.shields.io/badge/🎥%20YouTube%20video-F00.svg)](https://www.youtube.com/watch?v=feMWDVylhac)
+
+Repository for the project [Sampling and Filtering of Neural Machine Translation Distillation Data](https://aclanthology.org/2021.naacl-srw.1.pdf), which was presented at NAACL Student Research Workshop.
 
 > In most of neural machine translation distillation or stealing scenarios, the goal is to preserve the performance of the target model (teacher). The highest-scoring hypothesis of the teacher model is commonly used to train a new model (student). If reference translations are also available, then better hypotheses (with respect to the references) can be upsampled and poor hypotheses either removed or undersampled.
 > 
@@ -9,14 +14,19 @@ Repository for the project [Sampling and Filtering of Neural Machine Translation
 Cite as:
 
 ```
-@misc{zouhar2021sampling,
-      title={Sampling and Filtering of Neural Machine Translation Distillation Data}, 
-      author={Vilém Zouhar},
-      year={2021},
-      eprint={2104.00664},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{zouhar-2021-sampling,
+    title = "Sampling and Filtering of Neural Machine Translation Distillation Data",
+    author = "Zouhar, Vil{\'e}m",
+    booktitle = "Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Student Research Workshop",
+    month = jun,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.naacl-srw.1/",
+    doi = "10.18653/v1/2021.naacl-srw.1",
+    pages = "1--8",
 }
+
 ```
 
 ## Introduction 
@@ -28,7 +38,6 @@ Model distillation is the task of training a new model (student) in a way that i
 ### Download data
 
 To get the dataset we used for training, evaluating and training our models, simply run the scripts provided in the **reference-mt-steal/data/** directory. First use [_download_process.sh_](./data/download_process.sh) to download, shuffle and create the datasets. We focused on de-en, en-de, en-cs and cs-en translation. 
-
 
 ### Create datasets
 With [create_data.py](src/create_data.py) we are able to create new training, evaluation and test datasets for all language directions (de-en, en-de, cs-en, en-cs). The created datasets are then stored in [data/original](data/original/). The files then look like _train.cs-en.cs_ or _test.de-en.en_. For a description of those files read [this](#datasets).
